@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://daj5uwklc1no7"]
+
+[ext_resource type="Texture2D" uid="uid://7q3ni0t71jqy" path="res://testFolder/assets/images/logo2.png" id="1_uxhrb"]
+[ext_resource type="Script" path="res://testFolder/scripts/test_script.gd" id="2_o2nat"]
+
+[node name="TestGame" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(501, 307)
+scale = Vector2(0.243405, 0.243405)
+texture = ExtResource("1_uxhrb")
+script = ExtResource("2_o2nat")

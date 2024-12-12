@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TheJobWanted-WeeklyNewspaper-of-NIO"
-run/main_scene="res://nodes/node_2d.tscn"
+run/main_scene="res://scenes/TestGame.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/image/icon.svg"
 
