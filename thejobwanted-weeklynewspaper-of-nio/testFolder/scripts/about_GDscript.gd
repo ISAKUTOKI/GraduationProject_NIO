@@ -43,9 +43,15 @@ extends Node2D
 #dic.keys()	查找所有的键名
 #dic.values()	查找所有的值
 
-#方法
+#godot独有方法
 #func _ready():	开始时运算
 #func _process():	每帧运算
+#queue_free()	删除此场景
+#timer.start()	 开始倒计时
+#get_tree().whatwhat	  访问场景树并执行和场景有关的内容
+#whatwhat*delta	  将progress内的内容附以秒修正
+#Engine.time_scale	修改游戏整体的时间尺度
+#whatwhat.get_node	定位到已有节点
 
 #特殊语句
 #pass	跳过，占位用
@@ -54,8 +60,6 @@ extends Node2D
 
 
 func _ready() -> void:
-	var arr: Array = [1, 2, "a", 4, "b"]
-	print(arr[arr.size() - 1])
 	pass
 
 
