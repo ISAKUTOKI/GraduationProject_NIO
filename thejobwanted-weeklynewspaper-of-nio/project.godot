@@ -15,6 +15,10 @@ run/main_scene="res://node/node_2d.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://image/icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="mobile"
