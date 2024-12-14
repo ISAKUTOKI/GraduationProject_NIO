@@ -17,8 +17,8 @@ config/icon="res://assets/image/icon.svg"
 
 [autoload]
 
-Bgm="*res://testFolder/sceces/bgm.tscn"
 GlobalData="*res://testFolder/scripts/GlobalData.gd"
+Bgm="*res://testFolder/sceces/bgm.tscn"
 
 [display]
 

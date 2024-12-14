@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var hurt_SFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var hurt_SFX: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _on_body_entered(body: Node2D) -> void:
