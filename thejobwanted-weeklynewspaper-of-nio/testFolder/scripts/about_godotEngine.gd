@@ -1,5 +1,6 @@
 extends Node
 
+#节点说明
 #TileMap	   瓦片地图放置的节点
 #CharacterBody2D	   2D人物的节点
 #Sprite2D	静态精灵图的节点
@@ -10,3 +11,5 @@ extends Node
 #AnimationPlayer	   关键帧动画的节点
 #Timer	 倒计时节点
 #RayCast2D	 射线节点，多用于距离检测
+#Label	文本节点
+#AudioStreamPlayer	2D音频播放节点

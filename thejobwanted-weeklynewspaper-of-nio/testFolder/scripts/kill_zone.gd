@@ -1,28 +1,11 @@
 extends Area2D
 
-@onready var timer: Timer = $Timer
-#var canGetLeftTime: bool = false
+@onready var hurt_SFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _on_body_entered(body: Node2D) -> void:
 	print("YOU DIED...")
 	Engine.time_scale = 0.4
-	body.get_node("CollisionShape2D").queue_free()
-	#canGetLeftTime = true
-	timer.start()
-
-
-func _on_timer_timeout() -> void:
-	print("你！复活！")
-	#canGetLeftTime = false
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
-
-
-#func _timerLeft():
-	#if(canGetLeftTime):
-		#print("Timer time left: ", timer.get_time_left())
-#
-#
-#func _process(delta: float) -> void:
-	#_timerLeft()
+	body.get_node("CollisionShape2D").queue_free()  #获取body的碰撞箱节点然后把节点删掉
+	body.get_node("death_timer").death_timer.start()
+	hurt_SFX.play()

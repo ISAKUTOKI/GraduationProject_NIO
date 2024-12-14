@@ -6,7 +6,6 @@ var direction = 1
 @onready var RC_right: RayCast2D = $RayCastRight
 @onready var RC_left: RayCast2D = $RayCastLeft
 @onready var AnimePlayer: AnimatedSprite2D = $AnimatedSprite2D
-@onready var time_to_stop: Timer = $timeToStop
 
 
 func _process(delta: float) -> void:
