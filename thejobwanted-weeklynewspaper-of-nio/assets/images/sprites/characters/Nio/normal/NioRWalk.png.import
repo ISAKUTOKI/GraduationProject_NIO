@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8gv1ibbdo3nc"
-path="res://.godot/imported/icon.svg-3c4fcce06c793e60b0041edbaabd0bac.ctex"
+uid="uid://cb4yryl7uv6r"
+path="res://.godot/imported/NioRWalk.png-295ee607ab0bc27aa98990c8f5623ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/others/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-3c4fcce06c793e60b0041edbaabd0bac.ctex"]
+source_file="res://assets/images/sprites/characters/Nio/normal/NioRWalk.png"
+dest_files=["res://.godot/imported/NioRWalk.png-295ee607ab0bc27aa98990c8f5623ca2.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

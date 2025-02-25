@@ -1,3 +1,49 @@
-# Godot 4+ specific ignores
+# Godot 4.x specific ignores
 .godot/
-/android/
+*.import/
+export_presets.cfg
+
+# Binaries and executables
+*.exe
+*.dll
+*.so
+*.a
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+
+# Local development files
+local.*
+.env
+.env.local
+
+# Ignore all binary files
+*.bin
+*.dat
+*.pak
+
+# Ignore user-specific files
+user://
+
+# Ignore Godot 4.x Mono/C# build files (if using C#)
+.mono/

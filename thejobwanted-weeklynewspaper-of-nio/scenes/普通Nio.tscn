@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://boj74g4l5invv"]
+
+[ext_resource type="Script" path="res://scripts/Character/Nio/NormalNioBehaviour.gd" id="1_cccuq"]
+[ext_resource type="Texture2D" uid="uid://bfn27sm85k85l" path="res://assets/images/sprites/characters/Nio/normal/NioF.png" id="2_5lvr7"]
+[ext_resource type="Texture2D" uid="uid://chjxvautss3u7" path="res://assets/images/sprites/characters/Nio/normal/NioFWalk2.png" id="3_8mf3c"]
+[ext_resource type="Texture2D" uid="uid://ktujutscfvkw" path="res://assets/images/sprites/characters/Nio/normal/NioFWalk.png" id="4_btbwn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev06c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5lvr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8mf3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5lvr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_btbwn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0dfv"]
+size = Vector2(12, 26)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_cccuq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_ev06c")
+frame_progress = 0.14132
+speed_scale = 1.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_c0dfv")
