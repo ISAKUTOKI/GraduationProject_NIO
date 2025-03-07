@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwvm2g82eig0"]
+
+[ext_resource type="PackedScene" uid="uid://boj74g4l5invv" path="res://scenes/普通Nio.tscn" id="1_6o1xl"]
+[ext_resource type="PackedScene" uid="uid://c6aq5uull6ihl" path="res://scenes/KillZone.tscn" id="2_602pm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfojj"]
+size = Vector2(16, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nl1f"]
+size = Vector2(335, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KillZone" parent="." instance=ExtResource("2_602pm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(319, 90.5)
+shape = SubResource("RectangleShape2D_yfojj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, 89)
+shape = SubResource("RectangleShape2D_yfojj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(163.5, 179)
+shape = SubResource("RectangleShape2D_0nl1f")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(161, -4)
+shape = SubResource("RectangleShape2D_0nl1f")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_6o1xl")]
+position = Vector2(211, 113)
