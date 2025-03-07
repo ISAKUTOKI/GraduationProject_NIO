@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=3 uid="uid://boj74g4l5invv"]
+
+[ext_resource type="Script" path="res://scripts/Character/Nio/NormalPlayerBehaviour.gd" id="1_cccuq"]
+[ext_resource type="Texture2D" uid="uid://dwh2basp0xe8t" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioB.png" id="2_1uu4x"]
+[ext_resource type="Texture2D" uid="uid://cvugpaqgkuvvs" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioBWalk2.png" id="2_xuq5t"]
+[ext_resource type="Texture2D" uid="uid://chjxvautss3u7" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioFWalk2.png" id="3_8mf3c"]
+[ext_resource type="Texture2D" uid="uid://cvoopibpsxhtj" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioBWalk.png" id="3_mqjre"]
+[ext_resource type="Texture2D" uid="uid://ktujutscfvkw" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioFWalk.png" id="4_btbwn"]
+[ext_resource type="Texture2D" uid="uid://bfn27sm85k85l" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioF.png" id="5_123kq"]
+[ext_resource type="Texture2D" uid="uid://bldsiu7l0l1a7" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioL.png" id="8_etflj"]
+[ext_resource type="Texture2D" uid="uid://dlw5756xmn4p2" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioLWalk2.png" id="9_jd1f6"]
+[ext_resource type="Texture2D" uid="uid://caegta5kvjuxf" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioLWalk.png" id="10_sto00"]
+[ext_resource type="Texture2D" uid="uid://ch8355a1usjwv" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioR.png" id="11_84y0o"]
+[ext_resource type="Texture2D" uid="uid://bgdwy2lyk2cgb" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioRWalk2.png" id="12_y16on"]
+[ext_resource type="Texture2D" uid="uid://cb4yryl7uv6r" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioRWalk.png" id="13_4ibig"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ev06c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1uu4x")
+}],
+"loop": true,
+"name": &"B_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xuq5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mqjre")
+}],
+"loop": true,
+"name": &"B_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_123kq")
+}],
+"loop": true,
+"name": &"F_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8mf3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_btbwn")
+}],
+"loop": true,
+"name": &"F_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_etflj")
+}],
+"loop": true,
+"name": &"L_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jd1f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sto00")
+}],
+"loop": true,
+"name": &"L_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_84y0o")
+}],
+"loop": true,
+"name": &"R_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_y16on")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4ibig")
+}],
+"loop": true,
+"name": &"R_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0dfv"]
+size = Vector2(12, 26)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(88, 44)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_cccuq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_ev06c")
+animation = &"R_idle"
+speed_scale = 1.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_c0dfv")
