@@ -97,14 +97,13 @@ animations = [{
 size = Vector2(12, 26)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(88, 44)
+script = ExtResource("1_cccuq")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_cccuq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_ev06c")
-animation = &"R_idle"
+animation = &"R_walk"
 speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
