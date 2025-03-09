@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwvm2g82eig0"]
 
 [ext_resource type="PackedScene" uid="uid://boj74g4l5invv" path="res://scenes/普通Nio.tscn" id="1_6o1xl"]
-[ext_resource type="PackedScene" uid="uid://c6aq5uull6ihl" path="res://scenes/KillZone.tscn" id="2_602pm"]
+[ext_resource type="PackedScene" uid="uid://c6aq5uull6ihl" path="res://scenes/死亡区域.tscn" id="2_602pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfojj"]
 size = Vector2(16, 199)
@@ -29,5 +29,5 @@ shape = SubResource("RectangleShape2D_0nl1f")
 position = Vector2(161, -4)
 shape = SubResource("RectangleShape2D_0nl1f")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_6o1xl")]
-position = Vector2(211, 113)
+[node name="Nio" parent="." instance=ExtResource("1_6o1xl")]
+position = Vector2(160, 91)

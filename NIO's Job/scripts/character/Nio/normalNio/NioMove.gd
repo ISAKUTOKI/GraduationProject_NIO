@@ -1,16 +1,6 @@
-extends Node2D
+extends Node
 
-@export var group_name: String = "player"
-
-
-func _ready() -> void:
-	add_to_group(group_name)
-
-
-func _process(delta: float) -> void:
-	if can_move:
-		_move(delta)
-
+@onready var target: CharacterBody2D = get_parent() as CharacterBody2D
 
 # 移动相关变量
 @export var move_speed: int = 100
@@ -20,6 +10,12 @@ var can_move: bool = true
 var last_direction: String = "down"
 
 
+func _process(delta: float) -> void:
+	if can_move:
+		_move(delta)
+
+
+#region 移动行为
 func _move(delta: float) -> void:
 	velocity = Vector2.ZERO  # 为了在没有输入的时候停止移动
 
@@ -40,36 +36,31 @@ func _move(delta: float) -> void:
 		is_moving = false
 		match last_direction:
 			"up":
-				if $AnimatedSprite2D.animation != "B_idle":
-					$AnimatedSprite2D.play("B_idle")
+				if $"../AnimatedSprite2D".animation != "B_idle":
+					$"../AnimatedSprite2D".play("B_idle")
 			"down":
-				if $AnimatedSprite2D.animation != "F_idle":
-					$AnimatedSprite2D.play("F_idle")
+				if $"../AnimatedSprite2D".animation != "F_idle":
+					$"../AnimatedSprite2D".play("F_idle")
 			"left":
-				if $AnimatedSprite2D.animation != "L_idle":
-					$AnimatedSprite2D.play("L_idle")
+				if $"../AnimatedSprite2D".animation != "L_idle":
+					$"../AnimatedSprite2D".play("L_idle")
 			"right":
-				if $AnimatedSprite2D.animation != "R_idle":
-					$AnimatedSprite2D.play("R_idle")
+				if $"../AnimatedSprite2D".animation != "R_idle":
+					$"../AnimatedSprite2D".play("R_idle")
 	else:
 		is_moving = true
 		velocity = velocity.normalized() * move_speed
-		position += velocity * delta
+		target.position += velocity * delta
 
 		# 根据移动方向播放动画
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
-				$AnimatedSprite2D.play("R_walk")
+				$"../AnimatedSprite2D".play("R_walk")
 			else:
-				$AnimatedSprite2D.play("L_walk")
+				$"../AnimatedSprite2D".play("L_walk")
 		else:
 			if velocity.y > 0:
-				$AnimatedSprite2D.play("F_walk")
+				$"../AnimatedSprite2D".play("F_walk")
 			else:
-				$AnimatedSprite2D.play("B_walk")
-
-
-func kill() -> void:
-	print("Nio没了！")
-
-	queue_free()
+				$"../AnimatedSprite2D".play("B_walk")
+#endregion

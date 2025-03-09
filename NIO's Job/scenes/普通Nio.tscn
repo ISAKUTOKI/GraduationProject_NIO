@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://boj74g4l5invv"]
+[gd_scene load_steps=18 format=3 uid="uid://boj74g4l5invv"]
 
-[ext_resource type="Script" path="res://scripts/Character/Nio/NormalNio/NormalNioBehaviour.gd" id="1_cccuq"]
+[ext_resource type="Script" path="res://scripts/character/Nio/normalNio/NioBehaviour.gd" id="1_cccuq"]
 [ext_resource type="Texture2D" uid="uid://dwh2basp0xe8t" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioB.png" id="2_1uu4x"]
 [ext_resource type="Texture2D" uid="uid://cvugpaqgkuvvs" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioBWalk2.png" id="2_xuq5t"]
 [ext_resource type="Texture2D" uid="uid://chjxvautss3u7" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioFWalk2.png" id="3_8mf3c"]
 [ext_resource type="Texture2D" uid="uid://cvoopibpsxhtj" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioBWalk.png" id="3_mqjre"]
+[ext_resource type="Script" path="res://scripts/character/Nio/normalNio/NioInteract.gd" id="3_x42f3"]
 [ext_resource type="Texture2D" uid="uid://ktujutscfvkw" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioFWalk.png" id="4_btbwn"]
 [ext_resource type="Texture2D" uid="uid://bfn27sm85k85l" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioF.png" id="5_123kq"]
 [ext_resource type="Texture2D" uid="uid://bldsiu7l0l1a7" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioL.png" id="8_etflj"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ch8355a1usjwv" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioR.png" id="11_84y0o"]
 [ext_resource type="Texture2D" uid="uid://bgdwy2lyk2cgb" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioRWalk2.png" id="12_y16on"]
 [ext_resource type="Texture2D" uid="uid://cb4yryl7uv6r" path="res://assets/images/sprites/characters/Nio/normal/idle_move/NioRWalk.png" id="13_4ibig"]
+[ext_resource type="Script" path="res://scripts/character/Nio/normalNio/NioMove.gd" id="14_kx7io"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7tlm7"]
 animations = [{
@@ -96,8 +98,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrpvl"]
 size = Vector2(12, 26)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Nio" type="CharacterBody2D"]
 script = ExtResource("1_cccuq")
+
+[node name="Move" type="Node" parent="."]
+script = ExtResource("14_kx7io")
+
+[node name="interact" type="Node" parent="."]
+script = ExtResource("3_x42f3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7tlm7")
