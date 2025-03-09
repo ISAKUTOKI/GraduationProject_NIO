@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgdwy2lyk2cgb"
-path="res://.godot/imported/NioRWalk2.png-4de8be3fd05f7434f4d8d738ff7e72f6.ctex"
+path="res://.godot/imported/NioRWalk2.png-cf97fcbff22492b217a09d6bfb614fa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/characters/Nio/normal/idle_move/NioRWalk2.png"
-dest_files=["res://.godot/imported/NioRWalk2.png-4de8be3fd05f7434f4d8d738ff7e72f6.ctex"]
+source_file="res://assets/images/sprites/Nio/normal/idle_move/NioRWalk2.png"
+dest_files=["res://.godot/imported/NioRWalk2.png-cf97fcbff22492b217a09d6bfb614fa5.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch8355a1usjwv"
-path="res://.godot/imported/NioR.png-13c33168bf671c674d8c9f680c82f695.ctex"
+path="res://.godot/imported/NioR.png-a8e5f776d4c1f99aafb86ed5c094f75e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/characters/Nio/normal/idle_move/NioR.png"
-dest_files=["res://.godot/imported/NioR.png-13c33168bf671c674d8c9f680c82f695.ctex"]
+source_file="res://assets/images/sprites/Nio/normal/idle_move/NioR.png"
+dest_files=["res://.godot/imported/NioR.png-a8e5f776d4c1f99aafb86ed5c094f75e.ctex"]
 
 [params]
 
