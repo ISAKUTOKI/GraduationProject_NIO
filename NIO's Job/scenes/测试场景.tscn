@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwvm2g82eig0"]
+[gd_scene load_steps=8 format=3 uid="uid://cwvm2g82eig0"]
 
 [ext_resource type="PackedScene" uid="uid://c6aq5uull6ihl" path="res://scenes/死亡区域.tscn" id="2_602pm"]
 [ext_resource type="PackedScene" uid="uid://cxm7w3d4eqe80" path="res://scenes/交互区域.tscn" id="3_mqevn"]
 [ext_resource type="Texture2D" uid="uid://n76mmk0kj4yj" path="res://icon.svg" id="4_74s32"]
+[ext_resource type="PackedScene" uid="uid://byo2xx0o7wna2" path="res://scenes/普通Nio.tscn" id="4_chco3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfojj"]
 size = Vector2(16, 199)
@@ -42,3 +43,6 @@ texture = ExtResource("4_74s32")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 shape = SubResource("RectangleShape2D_uy8gy")
+
+[node name="Nio" parent="." instance=ExtResource("4_chco3")]
+position = Vector2(180, 87)
