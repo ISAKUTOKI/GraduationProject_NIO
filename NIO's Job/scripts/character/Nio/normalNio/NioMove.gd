@@ -13,6 +13,7 @@ var last_direction: String = "down"
 func _process(delta: float) -> void:
 	if can_move:
 		_move(delta)
+	pass
 
 
 #region 移动行为
