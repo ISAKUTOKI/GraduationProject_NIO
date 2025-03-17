@@ -19,13 +19,16 @@ func _interact(_interact_type: GlobalVarBus.InteractType):
 
 
 func _talk_interact():
+	print("Nio正在和什么说话")
 	pass
 
 
 func _use_interact():
+	print("Nio使用了什么")
 	pass
 
 
 func _pick_up_interact():
+	print("Nio捡起了什么")
 	pass
 #endregion

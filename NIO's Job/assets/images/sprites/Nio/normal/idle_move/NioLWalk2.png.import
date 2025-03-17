@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bldsiu7l0l1a7"
-path="res://.godot/imported/NioL.png-5b241594b902b074c4425aed40288107.ctex"
+uid="uid://dlw5756xmn4p2"
+path="res://.godot/imported/NioLWalk2.png-0758a84104af2ef7887a436e16b019d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sprites/characters/Nio/normal/idle_move/NioL.png"
-dest_files=["res://.godot/imported/NioL.png-5b241594b902b074c4425aed40288107.ctex"]
+source_file="res://assets/images/sprites/Nio/normal/idle_move/NioLWalk2.png"
+dest_files=["res://.godot/imported/NioLWalk2.png-0758a84104af2ef7887a436e16b019d8.ctex"]
 
 [params]
 
