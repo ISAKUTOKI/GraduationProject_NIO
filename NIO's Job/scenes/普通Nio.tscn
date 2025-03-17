@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dwh2basp0xe8t" path="res://assets/images/sprites/Nio/normal/idle_move/NioB.png" id="4_wcme6"]
 [ext_resource type="Texture2D" uid="uid://cvugpaqgkuvvs" path="res://assets/images/sprites/Nio/normal/idle_move/NioBWalk2.png" id="5_pueth"]
 [ext_resource type="Texture2D" uid="uid://cvoopibpsxhtj" path="res://assets/images/sprites/Nio/normal/idle_move/NioBWalk.png" id="6_w4n2g"]
-[ext_resource type="Texture2D" uid="uid://dt5qa8xnv6d6u" path="res://assets/images/sprites/Nio/normal/idle_move/NioF.png" id="7_ha7d5"]
+[ext_resource type="Texture2D" uid="uid://64bfph1fuknj" path="res://assets/images/sprites/Nio/normal/idle_move/NioF.png" id="7_ha7d5"]
 [ext_resource type="Texture2D" uid="uid://chjxvautss3u7" path="res://assets/images/sprites/Nio/normal/idle_move/NioFWalk2.png" id="8_htmvb"]
 [ext_resource type="Texture2D" uid="uid://ktujutscfvkw" path="res://assets/images/sprites/Nio/normal/idle_move/NioFWalk.png" id="9_2ltip"]
 [ext_resource type="Texture2D" uid="uid://bldsiu7l0l1a7" path="res://assets/images/sprites/Nio/normal/idle_move/NioL.png" id="10_3emqf"]
@@ -109,7 +109,7 @@ script = ExtResource("3_x42f3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7tlm7")
-animation = &"R_walk"
+animation = &"F_idle"
 speed_scale = 1.2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
