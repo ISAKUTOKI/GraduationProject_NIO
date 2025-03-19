@@ -13,7 +13,7 @@ config_version=5
 config/name="NIO's Job"
 run/main_scene="res://scenes/测试场景.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://assets/images/sprites/characters/Nio/normal/idle_move/NioF.png"
+config/icon="res://assets/images/sprites/Nio/normal/idle_move/NioF.png"
 run/snap/snap_2d_transforms_to_pixel=false
 run/snap/snap_2d_vertices_to_pixel=false
 

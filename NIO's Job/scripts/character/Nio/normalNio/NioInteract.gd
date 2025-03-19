@@ -3,7 +3,7 @@ extends Node
 var is_interacting: bool = false
 
 
-func _ready() -> void:
+func _ready() -> void: # 通过信号捕捉互动动作
 	GlobalSignalBus.player_has_interacted.connect(_interact)
 
 
@@ -18,6 +18,9 @@ func _interact(_interact_type: GlobalVarBus.InteractType):
 			_pick_up_interact()
 
 
+#endregion
+
+#region 互动类型
 func _talk_interact():
 	print("Nio正在和什么说话")
 	pass
@@ -31,4 +34,5 @@ func _use_interact():
 func _pick_up_interact():
 	print("Nio捡起了什么")
 	pass
+
 #endregion

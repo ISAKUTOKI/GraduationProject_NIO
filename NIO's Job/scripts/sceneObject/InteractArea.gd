@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if player_is_in_interact_area:
-		if Input.is_action_pressed("interact"):
+		if Input.is_action_just_pressed("interact"):
 			GlobalSignalBus.player_has_interacted.emit(_interact_type)
 
 
