@@ -10,13 +10,13 @@ var can_move: bool = true
 var last_direction: String = "down"
 
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void: # 移动监测
 	if can_move:
 		_move(delta)
 	pass
 
 
-#region 移动行为
+#region 移动行为逻辑
 func _move(delta: float) -> void:
 	velocity = Vector2.ZERO  # 为了在没有输入的时候停止移动
 
