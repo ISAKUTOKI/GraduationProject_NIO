@@ -55,32 +55,34 @@ extends Node
 
 # <i><b>以下为对信号使用的简单示例</b></i>
 
-signal is_pressed
-
-@onready var button = get_node("Button")
-var i: int = 0
-
-
-func _ready() -> void:
-	is_pressed.connect(_add_one)
-	is_pressed.connect(_disconnect_button_signal)
-
-
-func _add_one() -> void:
-	i = i + 1
-
-
-func _disconnect_button_signal() -> void:
-	print("尝试解绑信号")
-	if is_pressed.is_connected(_add_one):
-		is_pressed.disconnect(_add_one)
-	else:
-		print("信号不存在")
-
-
-func _on_button_pressed() -> void:
-	is_pressed.emit()
-	print(i)
+#region 示例代码区域
+#signal is_pressed
+#
+#@onready var button = get_node("Button")
+#var i: int = 0
+#
+#
+#func _ready() -> void:
+	#is_pressed.connect(_add_one)
+	#is_pressed.connect(_disconnect_button_signal)
+#
+#
+#func _add_one() -> void:
+	#i = i + 1
+#
+#
+#func _disconnect_button_signal() -> void:
+	#print("尝试解绑信号")
+	#if is_pressed.is_connected(_add_one):
+		#is_pressed.disconnect(_add_one)
+	#else:
+		#print("信号不存在")
+#
+#
+#func _on_button_pressed() -> void:
+	#is_pressed.emit()
+	#print(i)
+#endregion
 
 # 以上内容实现的效果：
 # 按下按钮则使i+1，打印出1，同时解绑_add_one方法，再次按下时打印出i但是值不变仍为1
