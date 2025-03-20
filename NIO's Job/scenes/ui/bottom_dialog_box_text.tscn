@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4caqaf22lefp"]
+
+[ext_resource type="Script" path="res://scripts/scene_object/BottomDialogBox.gd" id="1_6cxep"]
+[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="1_oy5wq"]
+[ext_resource type="Texture2D" uid="uid://cv6e5l4cqebtm" path="res://assets/dialog_things/bottom_dialog_box/bottom_dialog_box.png" id="2_e3gsu"]
+[ext_resource type="Texture2D" uid="uid://cfnjvfkfemaib" path="res://assets/images/hd_pic/Nio_normal_hd_pic.png" id="4_ecdy2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3wt22"]
+texture = ExtResource("2_e3gsu")
+texture_margin_left = 21.6667
+texture_margin_top = 128.333
+texture_margin_right = 21.0
+texture_margin_bottom = 18.6667
+
+[node name="BottomDialogBox" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_6cxep")
+
+[node name="DialogBoxPic" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1440.0
+offset_right = -2240.0
+offset_bottom = -1260.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(8, 8)
+theme_override_styles/normal = SubResource("StyleBoxTexture_3wt22")
+
+[node name="AvatarPic" type="TextureRect" parent="."]
+offset_left = -510.0
+offset_top = 434.0
+offset_right = 1990.0
+offset_bottom = 5434.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_ecdy2")
+stretch_mode = 4
+
+[node name="Text" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 795.0
+offset_top = -423.0
+offset_right = -206.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oy5wq")
+theme_override_font_sizes/font_size = 150
+text = "TEST text
+测试文本
+テスト"
+autowrap_mode = 3
+max_lines_visible = 2
