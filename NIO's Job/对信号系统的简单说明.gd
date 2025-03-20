@@ -1,3 +1,4 @@
+@tool
 class_name 对信号系统的简单说明
 extends Node
 

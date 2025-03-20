@@ -42,7 +42,7 @@ shape = SubResource("RectangleShape2D_0nl1f")
 
 [node name="InteractArea" parent="." instance=ExtResource("2_ia1hm")]
 position = Vector2(278, 89)
-_interact_type = 2
+_interact_type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="InteractArea"]
 scale = Vector2(0.15, 0.15)

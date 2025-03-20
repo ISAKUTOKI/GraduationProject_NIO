@@ -10,10 +10,24 @@ var can_move: bool = true
 var last_direction: String = "down"
 
 
-func _process(delta: float) -> void: # 移动监测
+func _ready() -> void:
+	GlobalSignalBus.interaction_started.connect(on_interaction_started)
+	GlobalSignalBus.interaction_ended.connect(on_interaction_ended)
+
+
+func _process(delta: float) -> void:  # 移动监测
 	if can_move:
 		_move(delta)
-	pass
+
+
+#region 当互动时无法移动
+func on_interaction_started(_placeholder = null):
+	can_move = false
+
+
+func on_interaction_ended():
+	can_move = true
+#endregion
 
 
 #region 移动行为逻辑

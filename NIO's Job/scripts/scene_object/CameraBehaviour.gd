@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 	_try_to_follow_player()
 
 
+#region 寻找并跟踪玩家
 func _try_to_find_player():
 	var players = get_tree().get_nodes_in_group(group_name)
 	if players.size() > 0:
@@ -28,3 +29,4 @@ func _try_to_follow_player(_speed: float = 0.1):
 
 func _on_target_destroyed():
 	target = null
+#endregion
