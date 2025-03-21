@@ -21,6 +21,7 @@ run/snap/snap_2d_vertices_to_pixel=false
 
 GlobalSignalBus="*res://scripts/global_scripts/GlobalSignalBus.gd"
 GlobalVarBus="*res://scripts/global_scripts/GlobalVarBus.gd"
+SceneManager="*res://scripts/system/SceneManager.gd"
 
 [display]
 
