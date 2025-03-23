@@ -1,38 +1,21 @@
 extends CanvasLayer
 
 @onready var avatar_pic: TextureRect = $AvatarPic
-@onready var content_text: Label = $Text
+@onready var text_content: Label = $Text
 
 var dialogs = []  # 当前对话内容
 var current_dialog = 0  # 当前对话索引（数组中的数）
-@export var show_dialog_interval: float = 0.1
+@export var show_dialog_unit_interval: float = 0.1
 var tween: Tween
-var is_active: bool = false
-
 var interaction_count: int = 0  # 记录互动次数
 var all_dialogs = []  # 存储所有对话内容
 
 
 func _ready() -> void:
-	_hide_dialog_box()
-	_load_dialogs_from_json("res://dialogs/bottom_dialogs/test_dialog.json")
+	_hide_bottom_dialog_box()
+	_load_dialogs_from_json("res://dialogs/bottom_dialogs/test_bottom_dialog.json")
+# 连接信号
 	GlobalSignalBus.box_talk_interacted.connect(_on_box_talk_interacted)
-
-
-func _on_box_talk_interacted():
-	interaction_count += 1  # 增加互动次数
-	_load_dialogs_for_interaction(interaction_count)  # 加载对应次数的对话
-	_show_dialog_box(dialogs)  # 显示对话
-
-
-# 新增：根据互动次数加载对话
-func _load_dialogs_for_interaction(count: int):
-	for entry in all_dialogs:
-		if entry.interaction_count == count:
-			dialogs = entry.dialogs
-			return
-	# 如果没有找到对应次数的对话，使用默认内容
-	dialogs = [{"avatar": "Nio_normal_null", "text": "没有更多对话了。"}]
 
 
 #region 解析JSON文件
@@ -53,20 +36,39 @@ func _load_dialogs_from_json(file_path: String):
 
 	all_dialogs = json.data  # 存储所有对话内容
 	print("加载对话组数量：", all_dialogs.size())
+
+
 #endregion
 
 
+func _on_box_talk_interacted():
+	interaction_count += 1
+	_load_dialogs_for_interaction(interaction_count)  # 加载对应次数的对话
+	_show_bottom_dialog_box()  # 显示对话
+
+
+# 新增：根据互动次数加载对话
+func _load_dialogs_for_interaction(count: int):
+	for dia in all_dialogs:
+		if dia.interaction_count == count:
+			dialogs = dia.dialogs
+			return
+	# 如果没有找到对应次数的对话，使用默认内容
+	dialogs = [{"avatar": "Nio_normal_null", "text": "没有更多对话了。"}]
+
+
 #region 切换底部对话框可见性
-func _hide_dialog_box():
+func _show_bottom_dialog_box():
+	self.visible = true
+	_show_dialog(0)
+
+
+func _hide_bottom_dialog_box():
 	self.visible = false
 	current_dialog = 0
 	dialogs = []
 
 
-func _show_dialog_box(_dialog):
-	dialogs = _dialog
-	self.visible = true
-	_show_dialog(0)
 #endregion
 
 
@@ -76,13 +78,18 @@ func _show_dialog(index):
 		return
 
 	current_dialog = index
-	var dialog = dialogs[current_dialog]
-	avatar_pic.texture = GlobalVarBus.AVATAR_MAP.get(dialog.avatar, null)
-	content_text.text = dialog.text
+	var _dialog = dialogs[current_dialog]
+	avatar_pic.texture = GlobalVarBus.AVATAR_MAP.get(_dialog.avatar, null)
+	text_content.text = _dialog.text
 
-	content_text.visible_ratio = 0.0
-	tween = create_tween()
-	tween.tween_property(content_text, "visible_ratio", 1.0, show_dialog_interval * content_text.text.length())
+	text_content.visible_ratio = 0.0
+	if tween:
+		tween.kill()
+	else:
+		tween = create_tween()
+		tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
+
+
 #endregion
 
 
@@ -94,11 +101,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if tween and tween.is_running():
 			tween.stop()
-			content_text.visible_ratio = 1.0
+			text_content.visible_ratio = 1.0
 		elif current_dialog + 1 < dialogs.size():
 			_show_dialog(current_dialog + 1)
 		else:
-			_hide_dialog_box()
+			_hide_bottom_dialog_box()
 			GlobalSignalBus.interaction_ended.emit()
 		get_viewport().set_input_as_handled()
 #endregion

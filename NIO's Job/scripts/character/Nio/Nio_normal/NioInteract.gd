@@ -27,13 +27,13 @@ func _interact(_interact_type: GlobalVarBus.InteractType):
 func _talk_interact():
 	GlobalSignalBus.talk_interacted.emit()
 	print("Nio正在和什么说话")
-	GlobalSignalBus.interaction_ended.emit()
+	#GlobalSignalBus.interaction_ended.emit()
 
 
 func _box_talk_interact():
 	GlobalSignalBus.box_talk_interacted.emit()
-	print("Nio正在使用对话框")
-
+	print("Nio正在使用对话框和什么说话")
+	#GlobalSignalBus.interaction_ended.emit()
 
 func _use_interact():
 	GlobalSignalBus.use_interacted.emit()

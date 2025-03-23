@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4caqaf22lefp"]
 
-[ext_resource type="Script" path="res://scripts/scene_object/BottomDialogBox.gd" id="1_6cxep"]
+[ext_resource type="Script" path="res://scripts/scene_object/ui/BottomDialogBox.gd" id="1_6cxep"]
 [ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="1_oy5wq"]
 [ext_resource type="Texture2D" uid="uid://cairuhdwo06kt" path="res://assets/dialog_things/bottom_dialog_box/bottom_dialog_box2.png" id="2_gp5il"]
 [ext_resource type="Texture2D" uid="uid://cfnjvfkfemaib" path="res://assets/images/hd_pic/Nio_normal_hd_pic.png" id="4_ecdy2"]

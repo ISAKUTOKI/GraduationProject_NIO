@@ -23,15 +23,28 @@ func _process(delta: float) -> void:  # 移动监测
 #region 当互动时无法移动
 func on_interaction_started(_placeholder = null):
 	can_move = false
+	match last_direction:
+		"up":
+			$"../AnimatedSprite2D".play("B_idle")
+		"down":
+			$"../AnimatedSprite2D".play("F_idle")
+		"left":
+			$"../AnimatedSprite2D".play("L_idle")
+		"right":
+			$"../AnimatedSprite2D".play("R_idle")
 
 
 func on_interaction_ended():
 	can_move = true
+
+
 #endregion
 
 
 #region 移动行为逻辑
 func _move(delta: float) -> void:
+	if not can_move:
+		return
 	velocity = Vector2.ZERO  # 为了在没有输入的时候停止移动
 
 	if Input.is_action_pressed("move_up"):
