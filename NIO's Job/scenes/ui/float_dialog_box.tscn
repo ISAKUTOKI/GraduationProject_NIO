@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7ne1iyemll7"]
+
+[ext_resource type="Texture2D" uid="uid://drpy2503tufdc" path="res://assets/dialog_things/float_box/chat_box_l.png" id="1_isgss"]
+[ext_resource type="Texture2D" uid="uid://c3ujie3mpvcj7" path="res://assets/dialog_things/float_box/chat_box_m.png" id="2_gckpd"]
+[ext_resource type="Texture2D" uid="uid://7ptpl86254lg" path="res://assets/dialog_things/float_box/chat_box_r.png" id="3_siadx"]
+[ext_resource type="Texture2D" uid="uid://c62mxgk07vaed" path="res://assets/dialog_things/float_box/chat_box_j.png" id="4_u45cp"]
+
+[node name="FloatDialogBox" type="Node2D"]
+
+[node name="DialogBox" type="Node" parent="."]
+
+[node name="Left" type="Sprite2D" parent="DialogBox"]
+position = Vector2(-35, 0)
+texture = ExtResource("1_isgss")
+
+[node name="Mid" type="Sprite2D" parent="DialogBox"]
+texture = ExtResource("2_gckpd")
+
+[node name="Right" type="Sprite2D" parent="DialogBox"]
+position = Vector2(35, 0)
+texture = ExtResource("3_siadx")
+
+[node name="J" type="Sprite2D" parent="DialogBox"]
+position = Vector2(12, 0)
+texture = ExtResource("4_u45cp")
