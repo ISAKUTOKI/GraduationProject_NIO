@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc4ngcpx733j"
-path="res://.godot/imported/chat_box.png-87b1d236a8bbb5422a6a8aa13dd8b53b.ctex"
+uid="uid://b51l4207x4nom"
+path="res://.godot/imported/float_dialog_box_exclamation.png-e70f74b91db4638872baa0a1ec0e5c51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dialog_things/float_box/chat_box.png"
-dest_files=["res://.godot/imported/chat_box.png-87b1d236a8bbb5422a6a8aa13dd8b53b.ctex"]
+source_file="res://assets/dialog_things/float_dialog_box/float_dialog_box_exclamation.png"
+dest_files=["res://.godot/imported/float_dialog_box_exclamation.png-e70f74b91db4638872baa0a1ec0e5c51.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwvm2g82eig0"]
+[gd_scene load_steps=11 format=3 uid="uid://cwvm2g82eig0"]
 
 [ext_resource type="PackedScene" uid="uid://c6aq5uull6ihl" path="res://scenes/scene_object/kill_zone.tscn" id="1_40gss"]
 [ext_resource type="PackedScene" uid="uid://ciljaucdsdwlu" path="res://scenes/scene_object/main_camera.tscn" id="1_dyg07"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://n76mmk0kj4yj" path="res://icon.svg" id="3_p16rb"]
 [ext_resource type="PackedScene" uid="uid://byo2xx0o7wna2" path="res://scenes/character/Nio_normal.tscn" id="4_ve3n2"]
 [ext_resource type="PackedScene" uid="uid://c4caqaf22lefp" path="res://scenes/ui/bottom_dialog_box.tscn" id="5_nkbp8"]
+[ext_resource type="PackedScene" uid="uid://cl8irlb7hl2mw" path="res://scenes/ui/float_dialog_box.tscn" id="7_4e8sc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfojj"]
 size = Vector2(16, 199)
@@ -52,3 +53,6 @@ texture = ExtResource("3_p16rb")
 shape = SubResource("RectangleShape2D_uy8gy")
 
 [node name="BottomDialogBox" parent="." instance=ExtResource("5_nkbp8")]
+
+[node name="FloatDialogBox" parent="." instance=ExtResource("7_4e8sc")]
+position = Vector2(180, 68)

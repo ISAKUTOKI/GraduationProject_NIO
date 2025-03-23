@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl8irlb7hl2mw"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jmakk"]
-
-[node name="Label" type="Label"]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_jmakk")

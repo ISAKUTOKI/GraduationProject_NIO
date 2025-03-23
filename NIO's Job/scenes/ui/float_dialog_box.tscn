@@ -1,25 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc7ne1iyemll7"]
+[gd_scene load_steps=4 format=3 uid="uid://cl8irlb7hl2mw"]
 
-[ext_resource type="Texture2D" uid="uid://drpy2503tufdc" path="res://assets/dialog_things/float_box/chat_box_l.png" id="1_isgss"]
-[ext_resource type="Texture2D" uid="uid://c3ujie3mpvcj7" path="res://assets/dialog_things/float_box/chat_box_m.png" id="2_gckpd"]
-[ext_resource type="Texture2D" uid="uid://7ptpl86254lg" path="res://assets/dialog_things/float_box/chat_box_r.png" id="3_siadx"]
-[ext_resource type="Texture2D" uid="uid://c62mxgk07vaed" path="res://assets/dialog_things/float_box/chat_box_j.png" id="4_u45cp"]
+[ext_resource type="Texture2D" uid="uid://duc4ngcpx733j" path="res://assets/dialog_things/float_dialog_box/float_dialog_box_null.png" id="1_hlwhx"]
+[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="5_hcxr8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wckq"]
+texture = ExtResource("1_hlwhx")
+texture_margin_left = 10.0
+texture_margin_top = 16.0
+texture_margin_right = 10.0
+texture_margin_bottom = 16.0
 
 [node name="FloatDialogBox" type="Node2D"]
 
-[node name="DialogBox" type="Node" parent="."]
-
-[node name="Left" type="Sprite2D" parent="DialogBox"]
-position = Vector2(-35, 0)
-texture = ExtResource("1_isgss")
-
-[node name="Mid" type="Sprite2D" parent="DialogBox"]
-texture = ExtResource("2_gckpd")
-
-[node name="Right" type="Sprite2D" parent="DialogBox"]
-position = Vector2(35, 0)
-texture = ExtResource("3_siadx")
-
-[node name="J" type="Sprite2D" parent="DialogBox"]
-position = Vector2(12, 0)
-texture = ExtResource("4_u45cp")
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -41.0
+offset_right = 73.0
+offset_bottom = 8.27
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_hcxr8")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxTexture_5wckq")
+text = "测试文本测试测试文本
+测试文本"
+horizontal_alignment = 1
+vertical_alignment = 1
