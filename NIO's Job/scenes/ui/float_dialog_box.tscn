@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cl8irlb7hl2mw"]
 
 [ext_resource type="Texture2D" uid="uid://duc4ngcpx733j" path="res://assets/dialog_things/float_dialog_box/float_dialog_box_null.png" id="1_hlwhx"]
-[ext_resource type="Script" path="res://scripts/scene_object/ui/FloatDialogBox.gd" id="1_k4e32"]
+[ext_resource type="Script" path="res://scripts/ui/FloatDialogBox.gd" id="1_k4e32"]
 [ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="5_hcxr8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wckq"]
