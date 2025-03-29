@@ -1,5 +1,10 @@
 extends Node
 
+#region 玩家状态
+@warning_ignore("unused_signal")
+signal player_is_dead
+#endregion
+
 #region 互动状态
 @warning_ignore("unused_signal")
 signal interaction_started(interact_type)
@@ -18,5 +23,7 @@ signal use_interacted
 signal pick_up_interacted
 #endregion
 
+#region 数据分拣工
 @warning_ignore("unused_signal")
-signal player_is_dead
+signal data_gain_score(score: float)
+#endregion

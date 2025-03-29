@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NIO's Job"
-run/main_scene="res://scenes/test_scene.tscn"
+run/main_scene="res://scenes/level/data_collection/main_desktop.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/images/sprites/Nio/normal/idle_move/Nio_f_walk.png"
 run/snap/snap_2d_transforms_to_pixel=false

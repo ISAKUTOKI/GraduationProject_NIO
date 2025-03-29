@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqvh5hrtem2go"]
+[gd_scene load_steps=5 format=3 uid="uid://bqvh5hrtem2go"]
 
 [ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="1_bushv"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_cell_number.gd" id="1_vsdvq"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_shake_number.gd" id="3_n5nra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31bdl"]
 size = Vector2(9, 10)
 
-[node name="DataNumber" type="Area2D"]
+[node name="DataCellNumber" type="Area2D"]
+z_index = 10
+script = ExtResource("1_vsdvq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -23,6 +27,7 @@ offset_right = 11.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_bushv")
 theme_override_font_sizes/font_size = 15
 text = "9"
@@ -30,3 +35,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 1
 visible_characters = 1
+
+[node name="ShakeNumber" type="Node" parent="."]
+script = ExtResource("3_n5nra")
+shake_speed = 25.0
+
+[node name="DragAndDrop" type="Node" parent="."]
