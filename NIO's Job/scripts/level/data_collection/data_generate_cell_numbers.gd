@@ -44,8 +44,11 @@ func _regenerate_all_grid():
 
 
 func _create_cell(pos: Vector2):
-	var cell = data_cell_numbers.instantiate() as DataCellNumber
-	add_child(cell)
-	cell.position = pos
-	cell.initialize_number(randi() % 10)
-	cell.content.custom_minimum_size = number_size
+	if data_cell_numbers:
+		var cell = data_cell_numbers.instantiate() as DataCellNumber
+		add_child(cell)
+		cell.position = pos
+		cell.initialize_number(randi() % 10)
+		cell.content.custom_minimum_size = number_size
+	else:
+		print("没有加载到 data_cell_numbers")

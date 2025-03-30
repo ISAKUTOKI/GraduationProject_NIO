@@ -29,7 +29,8 @@ func _process(delta: float) -> void:
 			_get_mouse_distance()
 			_change_alpha()
 			_shake_number(delta)
-
+		else:
+			target.modulate = Color(1,1,1,1)
 
 func _on_number_is_ready() -> void:
 	original_position = target.global_position
