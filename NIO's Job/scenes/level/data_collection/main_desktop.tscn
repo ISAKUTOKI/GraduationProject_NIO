@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpvetc7go15q5"]
+[gd_scene load_steps=24 format=3 uid="uid://bpvetc7go15q5"]
 
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_generate_cell_numbers.gd" id="1_ngin2"]
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_score.gd" id="1_wg56e"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://capwnhe2w2b7j" path="res://assets/images/level_data_collection/data_collection_pencase.png" id="9_k12yo"]
 [ext_resource type="Texture2D" uid="uid://cfoor2r8kdkpr" path="res://assets/images/level_data_collection/data_collection_screen_lines.png" id="10_w8rax"]
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_animations.gd" id="13_428x3"]
+[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="15_mloc5"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_youwon.gd" id="15_rcutg"]
 
 [sub_resource type="Animation" id="Animation_l0fjp"]
 resource_name = "shake"
@@ -80,11 +82,74 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4mcc"]
 bg_color = Color(0.282353, 0.878431, 0.933333, 1)
 
+[sub_resource type="Animation" id="Animation_sbg46"]
+resource_name = "YOUWON_anime"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.20679, 0.360444]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.365, 1.365), Vector2(0.76, 0.76)]
+}
+
+[sub_resource type="Animation" id="Animation_b65o4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.20679]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.365, 1.365)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m35hf"]
+_data = {
+"RESET": SubResource("Animation_b65o4"),
+"YOUWON_anime": SubResource("Animation_sbg46")
+}
+
 [node name="MainDesktop" type="Node2D"]
 
 [node name="Score" type="Node" parent="."]
 script = ExtResource("1_wg56e")
-score_demand_multiplier = 20.0
+is_in_test = true
+score_demand_multiplier = 10.0
 
 [node name="Animations" type="Node" parent="."]
 script = ExtResource("13_428x3")
@@ -149,3 +214,32 @@ offset_bottom = 48.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_r4mcc")
 value = 50.0
 show_percentage = false
+
+[node name="YOUWON" type="Node2D" parent="."]
+position = Vector2(169, 78)
+rotation = -0.20679
+scale = Vector2(1.365, 1.365)
+script = ExtResource("15_rcutg")
+can_show_this = true
+
+[node name="Label" type="Label" parent="YOUWON"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -22.5
+offset_right = 117.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_mloc5")
+theme_override_font_sizes/font_size = 45
+text = "YOU WON !!!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YOUWON/Label"]
+libraries = {
+"": SubResource("AnimationLibrary_m35hf")
+}
+autoplay = "YOUWON_anime"
