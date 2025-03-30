@@ -9,10 +9,11 @@ var spawn_rect := Rect2(Vector2(39, 28), Vector2(255, 105))  # 边距
 
 
 func _ready():
-	_regenerate_all_grid()
+	GlobalSignalBus.data_gain_score.connect(_regenerate_cell_number)
+	_regenerate_all_numbers()
 
 
-func _regenerate_all_grid():
+func _regenerate_all_numbers():
 # 清除旧实例————————————————————
 	for child in get_children():
 		if child is DataCellNumber:
@@ -40,7 +41,9 @@ func _regenerate_all_grid():
 
 			_create_cell(cell_pos)
 
-	scanning_line.z_index = 99
+
+func _regenerate_cell_number(_number: int, _last_position: Vector2) -> void:
+	_create_cell(_last_position)
 
 
 func _create_cell(pos: Vector2):

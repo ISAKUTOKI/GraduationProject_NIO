@@ -6,29 +6,29 @@ var current_score: int = 0
 @onready var progress_bar: ProgressBar = $"../Visuals/Movable/ProgressBar"
 
 
-
 func _ready() -> void:
 	GlobalSignalBus.data_gain_score.connect(_on_data_gain_score)
-	GlobalSignalBus.score_is_full.connect(_on_score_is_full)
 	_initialize_score()
 
 
-func _on_data_gain_score(_score: int) -> void:
+func _on_data_gain_score(_score: int, _position: Vector2) -> void:
 	current_score += _score
+	print("获得 " + str(_score) + " 分，当前总分： " + str(current_score))
 # 把分数转化成值，并增加少量的得分加成————————————————————
 	var _score_buff = randf_range(score_buff_random_value.x, score_buff_random_value.y)
 	var _v: float = (_score + _score_buff) / score_demand_multiplier
+	print("进度条获得： " + str(_v))
 	_change_progress_bar(_v)
 
 
 func _change_progress_bar(_value: float) -> void:
-	if progress_bar.value <=1:
+	if progress_bar.value <= 100:
 		progress_bar.value += _value
+		print("当前进度条为： " + str(progress_bar.value))
 	else:
+		print("进度条已满")
 		GlobalSignalBus.score_is_full.emit()
 
-func _on_score_is_full()->void:
-	pass
 
 func _initialize_score() -> void:
 	progress_bar.value = 0

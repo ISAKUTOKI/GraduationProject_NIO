@@ -10,10 +10,6 @@ var can_pick: bool = false
 var is_picked: bool = false
 
 
-func _ready() -> void:
-	pass
-
-
 func _process(_delta: float) -> void:
 	if can_pick and Input.is_action_just_pressed("click"):
 		GlobalSignalBus.data_number_is_picked.emit()
@@ -34,6 +30,11 @@ func _move_number_to_folder() -> void:
 	var tween2 = create_tween()
 	tween2.tween_property(target, "position", target_position, send_move_time)
 	await tween2.finished
+# 参数有效性检查————————————————————
+	if target.last_position:
+		GlobalSignalBus.data_gain_score.emit(target.last_number, target.last_position)
+	else:
+		print("得分参数不全")
 	target.queue_free()
 
 

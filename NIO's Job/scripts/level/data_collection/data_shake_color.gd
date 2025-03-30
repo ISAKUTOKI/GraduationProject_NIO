@@ -20,7 +20,6 @@ var can_start_process: bool = false
 func _ready() -> void:
 	target.number_is_ready.connect(_on_number_is_ready)
 	target.number_is_picked.connect(on_number_is_picked)
-	target = get_parent()
 
 
 func _process(delta: float) -> void:
@@ -30,7 +29,8 @@ func _process(delta: float) -> void:
 			_change_alpha()
 			_shake_number(delta)
 		else:
-			target.modulate = Color(1,1,1,1)
+			target.modulate = Color(1, 1, 1, 1)
+
 
 func _on_number_is_ready() -> void:
 	original_position = target.global_position

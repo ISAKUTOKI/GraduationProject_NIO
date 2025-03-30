@@ -84,6 +84,7 @@ bg_color = Color(0.282353, 0.878431, 0.933333, 1)
 
 [node name="Score" type="Node" parent="."]
 script = ExtResource("1_wg56e")
+score_demand_multiplier = 20.0
 
 [node name="Animations" type="Node" parent="."]
 script = ExtResource("13_428x3")
