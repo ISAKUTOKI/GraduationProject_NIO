@@ -26,4 +26,8 @@ signal pick_up_interacted
 #region 数据分拣工
 @warning_ignore("unused_signal")
 signal data_gain_score(score: float)
+@warning_ignore("unused_signal")
+signal data_number_is_picked
+@warning_ignore("unused_signal")
+signal score_is_full
 #endregion

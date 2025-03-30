@@ -35,42 +35,42 @@ position = Vector2(160, 90)
 is_in_test = true
 camera_move_speed = 50.0
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="Visuals" type="CanvasGroup" parent="."]
 position = Vector2(160, 90)
 
-[node name="Immovable" type="Node2D" parent="CanvasGroup"]
+[node name="Immovable" type="Node2D" parent="Visuals"]
 
-[node name="Background" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="Background" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("2_dxftp")
 
-[node name="Desktop" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="Desktop" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("3_a5dti")
 
-[node name="ScreenBackground" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="ScreenBackground" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("5_scmir")
 
-[node name="Computer" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="Computer" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("8_fcem0")
 
-[node name="Pen" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="Pen" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("9_k12yo")
 
-[node name="RunList" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="RunList" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("7_667mw")
 
-[node name="UI" type="Sprite2D" parent="CanvasGroup/Immovable"]
+[node name="UI" type="Sprite2D" parent="Visuals/Immovable"]
 texture = ExtResource("4_kmauf")
 
-[node name="Movable" type="Node2D" parent="CanvasGroup"]
+[node name="Movable" type="Node2D" parent="Visuals"]
 
-[node name="CameraRedLight" type="Sprite2D" parent="CanvasGroup/Movable"]
+[node name="CameraRedLight" type="Sprite2D" parent="Visuals/Movable"]
 texture = ExtResource("6_dxoc4")
 
-[node name="ScanningLine" type="Sprite2D" parent="CanvasGroup/Movable"]
+[node name="ScanningLine" type="Sprite2D" parent="Visuals/Movable"]
 z_index = 99
 texture = ExtResource("10_w8rax")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasGroup/Movable"]
+[node name="ProgressBar" type="ProgressBar" parent="Visuals/Movable"]
 offset_left = -115.0
 offset_top = 43.0
 offset_right = 101.0

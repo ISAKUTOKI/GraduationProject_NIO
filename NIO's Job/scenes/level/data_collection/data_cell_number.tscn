@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqvh5hrtem2go"]
+[gd_scene load_steps=8 format=3 uid="uid://bqvh5hrtem2go"]
 
 [ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="1_bushv"]
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_cell_number.gd" id="1_vsdvq"]
-[ext_resource type="Script" path="res://scripts/level/data_collection/data_shake_number.gd" id="3_n5nra"]
+[ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/2d_outline_shader.tres" id="2_yps7n"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_shake_color.gd" id="3_n5nra"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_pick_number.gd" id="4_5boud"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_outline_highlighter.gd" id="5_8y5nu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31bdl"]
 size = Vector2(9, 10)
@@ -15,7 +18,10 @@ script = ExtResource("1_vsdvq")
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_31bdl")
 
-[node name="Label" type="Label" parent="."]
+[node name="visuals" type="CanvasGroup" parent="."]
+material = ExtResource("2_yps7n")
+
+[node name="Label" type="Label" parent="visuals"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -36,8 +42,23 @@ vertical_alignment = 1
 max_lines_visible = 1
 visible_characters = 1
 
-[node name="ShakeNumber" type="Node" parent="."]
+[node name="ShakeAndColor" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("3_n5nra")
+target = NodePath("..")
+affected_distance = 51.867
 shake_speed = 25.0
+number_color = Color(0.699338, 0.871771, 0.666961, 1)
+min_alpha = 0.325
 
-[node name="DragAndDrop" type="Node" parent="."]
+[node name="PickNumber" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("4_5boud")
+target = NodePath("..")
+
+[node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("visuals")]
+script = ExtResource("5_8y5nu")
+visuals = NodePath("../visuals")
+outline_color = Color(1, 1, 1, 1)
+outline_thickness = 6
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,14 +1,18 @@
 class_name DataCellNumber
 extends Area2D
 
-@onready var content: Label = $Label
+@onready var outline_highlighter: OutlineHighlighter = $OutlineHighlighter
+@onready var content: Label = $visuals/Label
 signal number_is_ready
 
+
+
 func _ready() -> void:
-	_initialize_number()
+	self.add_to_group("data_number")
+	
 
 
-func _initialize_number(number: int = 42) -> void:
+func initialize_number(number: int = 42) -> void:
 # 设置数字————————————————————
 	if number != 42:
 		content.text = str(number)
@@ -18,3 +22,15 @@ func _initialize_number(number: int = 42) -> void:
 # 设置旋转————————————————————
 	rotation_degrees = randf_range(-7, 7)
 	number_is_ready.emit()
+
+
+func _on_mouse_entered() -> void:
+	outline_highlighter.highlight()
+	
+	#print("鼠标进入数字")
+
+
+func _on_mouse_exited() -> void:
+	outline_highlighter.clear_highlight()
+
+	#print("鼠标离开数字")

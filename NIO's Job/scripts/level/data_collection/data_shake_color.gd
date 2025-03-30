@@ -1,17 +1,17 @@
 extends Node
 
+@export var target: Node2D
 @export_range(0, 100) var affected_distance: float = 45
 @export var max_position_shake := Vector2(0.2, 0.4)
 @export var max_rotation_shake: float = 7
 @export var shake_speed: float = 20
+@export var number_color: Color
 @export_range(0, 1.0) var min_alpha: float = 0.11
 
 var original_position: Vector2  # 存储初始位置
 var original_rotation: float  # 存储初始旋转
 var shake_phase: float = randf() * 100.0  # 随机初始相位
 var distance_to_mouse: float
-
-@onready var target: DataCellNumber = $".."
 
 var can_start_process: bool = false
 
@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if can_start_process:
-		_get_mouse_position()
+		_get_mouse_distance()
 		_change_alpha()
 		_shake_number(delta)
 
@@ -34,15 +34,16 @@ func _on_number_is_ready() -> void:
 	can_start_process = true
 
 
-func _get_mouse_position() -> void:
+func _get_mouse_distance() -> void:
 	distance_to_mouse = (target.global_position - target.get_global_mouse_position()).length()
 
 
 func _change_alpha() -> void:
-	var alpha = clamp(1.0 - (distance_to_mouse / affected_distance), min_alpha, 1.0)
-	target.modulate = Color(1, 1, 1, alpha)
+	var _alpha = clamp(1.0 - (distance_to_mouse / affected_distance), min_alpha, 1.0)
+	target.modulate = Color(number_color.r, number_color.g, number_color.b, _alpha)
 
 
+# 震动数字的方法
 func _shake_number(_delta) -> void:
 	var strength = clamp(1.0 - distance_to_mouse / affected_distance, 0.0, 1.0)
 	if strength > 0:
