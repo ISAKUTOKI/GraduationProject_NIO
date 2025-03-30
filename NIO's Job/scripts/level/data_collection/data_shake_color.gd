@@ -12,26 +12,33 @@ var original_position: Vector2  # 存储初始位置
 var original_rotation: float  # 存储初始旋转
 var shake_phase: float = randf() * 100.0  # 随机初始相位
 var distance_to_mouse: float
+var is_picked: bool = false
 
 var can_start_process: bool = false
 
 
 func _ready() -> void:
 	target.number_is_ready.connect(_on_number_is_ready)
+	target.number_is_picked.connect(on_number_is_picked)
 	target = get_parent()
 
 
 func _process(delta: float) -> void:
 	if can_start_process:
-		_get_mouse_distance()
-		_change_alpha()
-		_shake_number(delta)
+		if not is_picked:
+			_get_mouse_distance()
+			_change_alpha()
+			_shake_number(delta)
 
 
 func _on_number_is_ready() -> void:
 	original_position = target.global_position
 	original_rotation = target.rotation_degrees
 	can_start_process = true
+
+
+func on_number_is_picked() -> void:
+	is_picked = true
 
 
 func _get_mouse_distance() -> void:

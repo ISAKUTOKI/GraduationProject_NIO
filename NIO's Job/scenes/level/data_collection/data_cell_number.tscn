@@ -53,6 +53,8 @@ min_alpha = 0.325
 [node name="PickNumber" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("4_5boud")
 target = NodePath("..")
+pick_move_time = 0.1
+send_move_time = 0.3
 
 [node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("visuals")]
 script = ExtResource("5_8y5nu")

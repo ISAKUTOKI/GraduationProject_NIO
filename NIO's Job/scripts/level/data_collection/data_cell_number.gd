@@ -1,15 +1,18 @@
 class_name DataCellNumber
 extends Area2D
 
+@onready var shake_and_color: Node = $ShakeAndColor
+@onready var pick_number: Node = $PickNumber
 @onready var outline_highlighter: OutlineHighlighter = $OutlineHighlighter
 @onready var content: Label = $visuals/Label
-signal number_is_ready
 
+signal number_is_ready
+@warning_ignore("unused_signal")
+signal number_is_picked
 
 
 func _ready() -> void:
 	self.add_to_group("data_number")
-	
 
 
 func initialize_number(number: int = 42) -> void:
@@ -26,11 +29,11 @@ func initialize_number(number: int = 42) -> void:
 
 func _on_mouse_entered() -> void:
 	outline_highlighter.highlight()
-	
+	pick_number.turn_to_can_pick()
 	#print("鼠标进入数字")
 
 
 func _on_mouse_exited() -> void:
 	outline_highlighter.clear_highlight()
-
+	pick_number.turn_to_cant_pick()
 	#print("鼠标离开数字")
