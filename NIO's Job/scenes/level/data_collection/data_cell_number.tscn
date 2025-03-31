@@ -45,10 +45,10 @@ visible_characters = 1
 [node name="ShakeAndColor" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("3_n5nra")
 target = NodePath("..")
-affected_distance = 51.867
+affected_distance = 68.202
 shake_speed = 25.0
 number_color = Color(0.699338, 0.871771, 0.666961, 1)
-min_alpha = 0.325
+min_alpha = 0.502
 
 [node name="PickNumber" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("4_5boud")

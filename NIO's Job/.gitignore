@@ -47,3 +47,6 @@ user://
 
 # Ignore Godot 4.x Mono/C# build files (if using C#)
 .mono/
+
+# 导出用
+.export/

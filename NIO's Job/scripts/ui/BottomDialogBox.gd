@@ -20,6 +20,7 @@ func _ready() -> void:
 
 #region 解析JSON文件
 func _load_dialogs_from_json(file_path: String):
+	
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if not file:
 		print("错误：无法打开文件 ", file_path)

@@ -8,13 +8,24 @@ extends Node
 
 var can_pick: bool = false
 var is_picked: bool = false
+var _score_is_full: bool = false
+
+
+func _ready() -> void:
+	GlobalSignalBus.score_is_full.connect(on_score_is_full)
 
 
 func _process(_delta: float) -> void:
-	if can_pick and Input.is_action_just_pressed("click"):
+	if _score_is_full:
+		return
+	if can_pick and Input.is_action_pressed("click"):
 		GlobalSignalBus.data_number_is_picked.emit()
 		target.number_is_picked.emit()
 		_move_number_to_folder()
+
+
+func on_score_is_full() -> void:
+	_score_is_full = true
 
 
 func _move_number_to_folder() -> void:

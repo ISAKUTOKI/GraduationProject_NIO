@@ -12,4 +12,4 @@ func _on_score_is_full() -> void:
 	if can_show_this:
 		visible = true
 	else:
-		"你没有资格啊你没有资格，正因为如此你没有资格"
+		print("你没有资格啊你没有资格，正因为如此你没有资格")

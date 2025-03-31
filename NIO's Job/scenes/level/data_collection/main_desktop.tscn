@@ -17,6 +17,33 @@
 [ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="15_mloc5"]
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_youwon.gd" id="15_rcutg"]
 
+[sub_resource type="Animation" id="Animation_chyaa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_l0fjp"]
 resource_name = "shake"
 length = 2.0
@@ -46,33 +73,6 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.678431), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.678431), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_chyaa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mbthb"]
 _data = {
 "RESET": SubResource("Animation_chyaa"),
@@ -81,6 +81,33 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4mcc"]
 bg_color = Color(0.282353, 0.878431, 0.933333, 1)
+
+[sub_resource type="Animation" id="Animation_b65o4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.20679]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.365, 1.365)]
+}
 
 [sub_resource type="Animation" id="Animation_sbg46"]
 resource_name = "YOUWON_anime"
@@ -111,33 +138,6 @@ tracks/1/keys = {
 "values": [Vector2(1.365, 1.365), Vector2(0.76, 0.76)]
 }
 
-[sub_resource type="Animation" id="Animation_b65o4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.20679]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.365, 1.365)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m35hf"]
 _data = {
 "RESET": SubResource("Animation_b65o4"),
@@ -149,7 +149,6 @@ _data = {
 [node name="Score" type="Node" parent="."]
 script = ExtResource("1_wg56e")
 is_in_test = true
-score_demand_multiplier = 10.0
 
 [node name="Animations" type="Node" parent="."]
 script = ExtResource("13_428x3")
@@ -220,7 +219,6 @@ position = Vector2(169, 78)
 rotation = -0.20679
 scale = Vector2(1.365, 1.365)
 script = ExtResource("15_rcutg")
-can_show_this = true
 
 [node name="Label" type="Label" parent="YOUWON"]
 anchors_preset = 8
