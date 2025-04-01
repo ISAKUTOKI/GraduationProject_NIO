@@ -10,6 +10,7 @@ extends Node2D
 
 func _ready() -> void:
 	GlobalSignalBus.burger_part_is_created.connect(_on_burger_part_is_created)
+	z_index = 2
 	#print("链接了 burger_part_is_created")
 
 
@@ -38,4 +39,8 @@ func _initialize(_picked_type: BurgerPartStats, _initialize_position: Vector2, _
 func _drop_part(to) -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", to, drop_time)
-	await tween
+	tween.tween_property(self, "position", to + Vector2(0, 4), 0.1)
+	tween.tween_property(self, "position", to, 0.07)
+	tween.tween_property(self, "position", to + Vector2(0, 2), 0.07)
+	tween.tween_property(self, "position", to, 0.03)
+	await tween.finished

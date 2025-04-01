@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://bbtitw1jcgq2g" path="res://data/burger_types/burger_down.tres" id="11_cpo8c"]
 [ext_resource type="Resource" uid="uid://cmg0ho7y1ylw" path="res://data/burger_types/lettuce.tres" id="12_s65o0"]
 [ext_resource type="Resource" uid="uid://dftglvj0wkff3" path="res://data/burger_types/cucumber.tres" id="13_2d55p"]
-[ext_resource type="Texture2D" uid="uid://bs3qcl80s2vtr" path="res://assets/images/level_make_burger/full_burger.png" id="14_0akp4"]
+[ext_resource type="Texture2D" uid="uid://bw07d60gwgoqf" path="res://assets/images/level_make_burger/burger_shadow.png" id="14_aygbr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bf0dc"]
 radius = 8.0
@@ -30,8 +30,8 @@ radius = 16.0
 height = 50.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdge1"]
-radius = 14.0
-height = 46.0
+radius = 16.0
+height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hafhb"]
 radius = 14.0
@@ -92,7 +92,7 @@ polygon = PackedVector2Array(131, 36, 174, 36, 182.31, 74, 130.645, 74)
 stats = ExtResource("10_tcipa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/BurgerUp"]
-position = Vector2(170, 96)
+position = Vector2(170, 98)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_hdge1")
 
@@ -124,9 +124,8 @@ position = Vector2(254, 145)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_gxaml")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(160, 90)
-texture = ExtResource("14_0akp4")
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("14_aygbr")
 
 [node name="CreateBurgerPart" type="Node" parent="."]
 script = ExtResource("1_ew12f")
