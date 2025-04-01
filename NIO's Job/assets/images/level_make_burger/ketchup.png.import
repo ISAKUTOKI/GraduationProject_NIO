@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt110vbwv1r37"
-path="res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"
+uid="uid://b1vp6lmyn75kd"
+path="res://.godot/imported/ketchup.png-e42dea5d6deab186a2c41159b6236981.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_make_burger/meat.png"
-dest_files=["res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"]
+source_file="res://assets/images/level_make_burger/ketchup.png"
+dest_files=["res://.godot/imported/ketchup.png-e42dea5d6deab186a2c41159b6236981.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt110vbwv1r37"
-path="res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"
+uid="uid://bjdblktq4lnqg"
+path="res://.godot/imported/onion.png-f9ec93b361c75e212cae3c79154594b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_make_burger/meat.png"
-dest_files=["res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"]
+source_file="res://assets/images/level_make_burger/onion.png"
+dest_files=["res://.godot/imported/onion.png-f9ec93b361c75e212cae3c79154594b4.ctex"]
 
 [params]
 

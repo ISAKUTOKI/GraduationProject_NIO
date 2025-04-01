@@ -31,3 +31,8 @@ signal data_number_is_picked
 @warning_ignore("unused_signal")
 signal score_is_full
 #endregion
+
+#region 汉堡店员
+@warning_ignore("unused_signal")
+signal burger_part_is_picked(type: BurgerPartStats.PartType)
+#endregion

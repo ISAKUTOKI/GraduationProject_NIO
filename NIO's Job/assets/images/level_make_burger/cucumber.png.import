@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt110vbwv1r37"
-path="res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"
+uid="uid://dgc84hkhggcua"
+path="res://.godot/imported/cucumber.png-a843f9e21037e87b90cf8204ff7b39f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_make_burger/meat.png"
-dest_files=["res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"]
+source_file="res://assets/images/level_make_burger/cucumber.png"
+dest_files=["res://.godot/imported/cucumber.png-a843f9e21037e87b90cf8204ff7b39f7.ctex"]
 
 [params]
 

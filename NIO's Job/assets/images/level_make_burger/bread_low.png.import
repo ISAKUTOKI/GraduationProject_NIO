@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt110vbwv1r37"
-path="res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"
+uid="uid://daqnd1u1vnd7l"
+path="res://.godot/imported/bread_low.png-b9e6ba373acd999c58778e93ace486eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_make_burger/meat.png"
-dest_files=["res://.godot/imported/meat.png-8dce90524ecff5743645b5e02bc25ba5.ctex"]
+source_file="res://assets/images/level_make_burger/bread_low.png"
+dest_files=["res://.godot/imported/bread_low.png-b9e6ba373acd999c58778e93ace486eb.ctex"]
 
 [params]
 
