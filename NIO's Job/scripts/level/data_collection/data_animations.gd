@@ -31,10 +31,3 @@ func _turn_red_light_on(light_is_red: bool = true) -> void:
 		light_is_green = !light_is_red
 	else:
 		print("摄像头红灯 加载失败")
-
-
-func _blink_scanning_line() -> void:
-	if scanning_line:
-		pass
-	else:
-		print("扫描线 加载失败")

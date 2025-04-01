@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="BurgerPartStats" load_steps=2 format=3 uid="uid://dtg2pwuu77ekq"]
-
-[ext_resource type="Script" path="res://scripts/level/make_burger/burger_part_stats.gd" id="1_ev5tu"]
-
-[resource]
-script = ExtResource("1_ev5tu")
-type = 0

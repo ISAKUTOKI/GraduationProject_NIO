@@ -31,7 +31,7 @@ const UsedPartSprite := {
 
 const CreateOffset := {
 	PartType.汉堡上: Vector2(0, 8),
-	PartType.汉堡下: Vector2(0, 8),
+	PartType.汉堡下: Vector2(0, 4),
 	PartType.肉饼: Vector2(0, 4),
 	PartType.芝士: Vector2(0, 3),
 	PartType.芥末酱: Vector2(0, 2),
@@ -39,7 +39,7 @@ const CreateOffset := {
 	PartType.生菜: Vector2(0, 3),
 	PartType.洋葱: Vector2(0, 3),
 	PartType.番茄: Vector2(0, 3),
-	PartType.黄瓜: Vector2(0, 3)
+	PartType.黄瓜: Vector2(0, 1)
 }
 
 @export var type: PartType

@@ -29,8 +29,6 @@ func on_interaction_ended():
 	print("结束了互动")
 	await get_tree().create_timer(0.05).timeout
 	is_in_interaction = false
-
-
 #endregion
 
 
@@ -43,8 +41,6 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group(target_group):
 		player_is_in_interact_area = false
-
-
 #endregion
 
 
@@ -53,5 +49,4 @@ func _try_to_interact():
 	if player_is_in_interact_area:
 		if Input.is_action_just_pressed("interact"):
 			GlobalSignalBus.interaction_started.emit(_interact_type)
-
 #endregion

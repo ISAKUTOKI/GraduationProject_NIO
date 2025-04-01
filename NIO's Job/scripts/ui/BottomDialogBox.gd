@@ -20,7 +20,6 @@ func _ready() -> void:
 
 #region 解析JSON文件
 func _load_dialogs_from_json(file_path: String):
-	
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if not file:
 		print("错误：无法打开文件 ", file_path)
@@ -76,19 +75,24 @@ func _hide_bottom_dialog_box():
 #region 显示内容
 func _show_dialog(index):
 	if index < 0 or index >= dialogs.size():
+		#print("无效索引：", index)
+		_hide_bottom_dialog_box()
 		return
 
 	current_dialog = index
 	var _dialog = dialogs[current_dialog]
-	avatar_pic.texture = GlobalVarBus.AVATAR_MAP.get(_dialog.avatar, null)
-	text_content.text = _dialog.text
+	#print("正在显示对话：", _dialog)
 
+	avatar_pic.texture = GlobalVarBus.AVATAR_MAP.get(_dialog.avatar, null)
+
+	text_content.text = _dialog.text
 	text_content.visible_ratio = 0.0
+
 	if tween:
 		tween.kill()
-	else:
-		tween = create_tween()
-		tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
+		tween = null
+	tween = create_tween().bind_node(self)
+	tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
 
 
 #endregion

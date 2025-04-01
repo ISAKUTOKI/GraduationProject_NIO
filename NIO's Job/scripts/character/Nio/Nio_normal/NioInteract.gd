@@ -19,7 +19,6 @@ func _interact(_interact_type: GlobalVarBus.InteractType):
 		GlobalVarBus.InteractType.PICK_UP:
 			_pick_up_interact()
 
-
 #endregion
 
 
@@ -45,5 +44,4 @@ func _pick_up_interact():
 	GlobalSignalBus.pick_up_interacted.emit()
 	print("Nio捡起了什么")
 	GlobalSignalBus.interaction_ended.emit()
-
 #endregion

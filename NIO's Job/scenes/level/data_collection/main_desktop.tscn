@@ -219,6 +219,7 @@ position = Vector2(169, 78)
 rotation = -0.20679
 scale = Vector2(1.365, 1.365)
 script = ExtResource("15_rcutg")
+can_show_this = true
 
 [node name="Label" type="Label" parent="YOUWON"]
 anchors_preset = 8

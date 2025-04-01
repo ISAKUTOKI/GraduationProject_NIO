@@ -89,6 +89,7 @@ func _float_dialog_follow_target():
 	global_position = target_node.global_position + offset
 
 
+#region 显示内容
 func _show_dialog(index):
 	if index < 0 or index >= dialogs.size():
 		#print("无效索引：", index)
@@ -107,6 +108,7 @@ func _show_dialog(index):
 		tween = null
 	tween = create_tween().bind_node(self)
 	tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
+#endregion
 
 
 #region 对话中处理点击行为

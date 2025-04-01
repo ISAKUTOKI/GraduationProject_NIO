@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 		_try_to_follow_player()
 	else:
 		if is_in_test:
-			try_to_move_camera(delta)
+			try_to_move_camera_by_keyboard(delta)
 
 
 #region 寻找并跟踪玩家
@@ -43,7 +43,7 @@ func _on_target_destroyed():
 #endregion
 
 
-func try_to_move_camera(_delta: float) -> void:
+func try_to_move_camera_by_keyboard(_delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		position += Vector2(1, 0) * _delta * camera_move_speed
 	elif Input.is_action_pressed("move_left"):

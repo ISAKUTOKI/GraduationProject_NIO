@@ -50,3 +50,4 @@ user://
 
 # 导出用
 .export/
+.builds/
