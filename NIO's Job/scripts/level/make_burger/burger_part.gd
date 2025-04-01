@@ -2,7 +2,7 @@ class_name BurgerPart
 extends Node2D
 
 @export var stats: BurgerPartStats
-@export var use_random_x_offset: bool = true
+
 @export var drop_time: float = 0.3
 
 @onready var sprite: Sprite2D = $Sprite2D
@@ -25,13 +25,8 @@ func _initialize(_picked_type: BurgerPartStats, _initialize_position: Vector2, _
 # 图像设定————————————————————
 	sprite.texture = load(BurgerPartStats.UsedPartSprite[_picked_type.type])
 # 位置设定————————————————————
-	var _random_x_offset: int
-	if use_random_x_offset:
-		_random_x_offset = randi_range(-3, 3)
-	else:
-		_random_x_offset = 0
-	var _created_position: Vector2 = _initialize_position + Vector2(_random_x_offset, 0)
-	var _drop_position: Vector2 = _target_position + Vector2(_random_x_offset, 0)
+	var _created_position: Vector2 = _initialize_position
+	var _drop_position: Vector2 = _target_position
 	position = _created_position
 	_drop_part(_drop_position)
 
