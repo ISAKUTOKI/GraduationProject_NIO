@@ -34,5 +34,7 @@ signal score_is_full
 
 #region 汉堡店员
 @warning_ignore("unused_signal")
-signal burger_part_is_picked(type: BurgerPartStats)
+signal burger_part_is_picked(part_type: BurgerPartStats)
+@warning_ignore("unused_signal")
+signal burger_part_is_created(part_type: BurgerPartStats, from: Vector2, to: Vector2)
 #endregion
