@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh7jer1dduvl2"]
+
+[ext_resource type="PackedScene" uid="uid://ciljaucdsdwlu" path="res://scenes/scene_object/main_camera.tscn" id="1_d627q"]
+[ext_resource type="Texture2D" uid="uid://cb31qp0owitpr" path="res://assets/images/level_make_burger/work_place.png" id="1_rq2mt"]
+[ext_resource type="Texture2D" uid="uid://bepy52eu3aiy5" path="res://assets/images/level_make_burger/meat.png" id="3_7q55e"]
+[ext_resource type="PackedScene" uid="uid://b2sfsvr6r45n8" path="res://scenes/level/make_burger/burger_part_on_desktop.tscn" id="3_pp1l0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6olts"]
+radius = 16.0
+height = 56.0
+
+[node name="BugerMainDesktop" type="Node2D"]
+
+[node name="MainCamera" parent="." instance=ExtResource("1_d627q")]
+position = Vector2(160, 90)
+
+[node name="Visual" type="CanvasGroup" parent="."]
+position = Vector2(160, 90)
+
+[node name="MainDesktop" type="Sprite2D" parent="Visual"]
+texture = ExtResource("1_rq2mt")
+
+[node name="BurgerPartOnDesktop" parent="." instance=ExtResource("3_pp1l0")]
+texture = ExtResource("3_7q55e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BurgerPartOnDesktop"]
+position = Vector2(255, 145)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_6olts")

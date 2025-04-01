@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2sfsvr6r45n8"]
+
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_part_on_desktop_outline_highlighter.gd" id="1_n3pt5"]
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_part_on_desktop.gd" id="1_ydib0"]
+[ext_resource type="Material" uid="uid://crng8adjaq3v4" path="res://assets/shaders/sprite_outline/sprite_outline_shader.tres" id="2_f55a5"]
+
+[node name="BurgerPartOnDesktop" type="Area2D"]
+script = ExtResource("1_ydib0")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_f55a5")
+
+[node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_n3pt5")
+target = NodePath("../Sprite2D")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
