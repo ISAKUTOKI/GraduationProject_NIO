@@ -20,7 +20,7 @@ func _input(event: InputEvent) -> void:
 	if mouse_is_in_area and event.is_action_pressed("select"):
 		#print("鼠标在区域内按下了 select 键")
 		GlobalSignalBus.burger_part_is_picked.emit(stats)
-		print(str(stats.type) + " 的 " + GlobalSignalBus.burger_part_is_picked.get_name() + " 信号发出了")
+		#print(str(stats.type) + " 的 burger_part_is_picked 信号发出了")
 
 
 func _set_stats(_value: BurgerPartStats) -> void:

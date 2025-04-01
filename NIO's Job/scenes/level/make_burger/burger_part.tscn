@@ -1,20 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg1uy4wrgy0cr"]
+[gd_scene load_steps=3 format=3 uid="uid://dg1uy4wrgy0cr"]
 
-[ext_resource type="Script" path="res://scripts/level/make_burger/burger_velocity_based_rotation.gd" id="1_dvaxu"]
 [ext_resource type="Script" path="res://scripts/level/make_burger/burger_part.gd" id="1_i7nd6"]
 [ext_resource type="Texture2D" uid="uid://dy1w1ec3gc2e" path="res://assets/images/level_make_burger/burger_meat.png" id="2_ficyb"]
-[ext_resource type="Script" path="res://scripts/level/make_burger/burger_drag_and_drop.gd" id="4_b5v3n"]
 
 [node name="BurgerPart" type="Node2D"]
 script = ExtResource("1_i7nd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ficyb")
-
-[node name="VelocityBasedRotation" type="Node" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("1_dvaxu")
-target = NodePath("../Sprite2D")
-
-[node name="DragAndDrop" type="Node" parent="." node_paths=PackedStringArray("target")]
-script = ExtResource("4_b5v3n")
-target = NodePath("..")
