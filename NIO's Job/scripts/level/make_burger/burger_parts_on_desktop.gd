@@ -1,7 +1,6 @@
 @tool
 extends Area2D
 
-@export var burger_part: PackedScene
 @export var stats: BurgerPartStats:
 	set = _set_stats
 
@@ -16,7 +15,12 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 
-	GlobalSignalBus.burger_part_is_picked.connect(_on_burger_part_is_picked)
+
+func _input(event: InputEvent) -> void:
+	if mouse_is_in_area and event.is_action_pressed("select"):
+		#print("鼠标在区域内按下了 select 键")
+		GlobalSignalBus.burger_part_is_picked.emit(stats)
+		print(str(stats.type) + " 的 " + GlobalSignalBus.burger_part_is_picked.get_name() + " 信号发出了")
 
 
 func _set_stats(_value: BurgerPartStats) -> void:
@@ -49,15 +53,3 @@ func _on_mouse_exited() -> void:
 	visuals.z_index = 0
 
 	mouse_is_in_area = false
-
-
-func _on_burger_part_is_picked() -> void:
-	pass
-
-
-func _create_burger_part() -> void:
-	if burger_part:
-		var part = burger_part.instantiate() as BurgerPart
-		var root = get_tree().current_scene
-		root.add_child(part)
-	pass

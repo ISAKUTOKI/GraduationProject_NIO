@@ -30,16 +30,16 @@ const UsedPartSprite := {
 }
 
 const PickedOffset := {
-	PartType.汉堡上: Vector2(),
-	PartType.汉堡下: Vector2(),
-	PartType.肉饼: Vector2(),
-	PartType.芝士: Vector2(),
-	PartType.芥末酱: Vector2(),
-	PartType.番茄酱: Vector2(),
-	PartType.生菜: Vector2(),
-	PartType.洋葱: Vector2(),
-	PartType.番茄: Vector2(),
-	PartType.黄瓜: Vector2()
+	PartType.汉堡上: Vector2(0, 13),
+	PartType.汉堡下: Vector2(0, 8),
+	PartType.肉饼: Vector2(0, 6),
+	PartType.芝士: Vector2(0, 7),
+	PartType.芥末酱: Vector2(0, 1),
+	PartType.番茄酱: Vector2(0, 1),
+	PartType.生菜: Vector2(0, 6),
+	PartType.洋葱: Vector2(0, 4),
+	PartType.番茄: Vector2(0, 4),
+	PartType.黄瓜: Vector2(0, 6)
 }
 
 @export var type: PartType

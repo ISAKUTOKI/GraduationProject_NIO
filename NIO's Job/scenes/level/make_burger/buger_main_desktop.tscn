@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh7jer1dduvl2"]
+[gd_scene load_steps=23 format=3 uid="uid://bh7jer1dduvl2"]
 
 [ext_resource type="PackedScene" uid="uid://ciljaucdsdwlu" path="res://scenes/scene_object/main_camera.tscn" id="1_d627q"]
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_create_burger.gd" id="1_ew12f"]
 [ext_resource type="Texture2D" uid="uid://cb31qp0owitpr" path="res://assets/images/level_make_burger/work_place.png" id="1_rq2mt"]
+[ext_resource type="PackedScene" uid="uid://dg1uy4wrgy0cr" path="res://scenes/level/make_burger/burger_part.tscn" id="2_7edkd"]
 [ext_resource type="PackedScene" uid="uid://b2sfsvr6r45n8" path="res://scenes/level/make_burger/burger_part_on_desktop.tscn" id="3_pp1l0"]
 [ext_resource type="Resource" uid="uid://dufhodib8mi3a" path="res://data/burger_types/ketchup.tres" id="4_hjdpj"]
 [ext_resource type="Resource" uid="uid://bp0mra4cf121d" path="res://data/burger_types/meat.tres" id="4_nkvx2"]
@@ -13,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://bbtitw1jcgq2g" path="res://data/burger_types/burger_down.tres" id="11_cpo8c"]
 [ext_resource type="Resource" uid="uid://cmg0ho7y1ylw" path="res://data/burger_types/lettuce.tres" id="12_s65o0"]
 [ext_resource type="Resource" uid="uid://dftglvj0wkff3" path="res://data/burger_types/cucumber.tres" id="13_2d55p"]
+[ext_resource type="Texture2D" uid="uid://bs3qcl80s2vtr" path="res://assets/images/level_make_burger/full_burger.png" id="14_0akp4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bf0dc"]
 radius = 8.0
@@ -120,3 +123,11 @@ stats = ExtResource("4_nkvx2")
 position = Vector2(254, 145)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_gxaml")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("14_0akp4")
+
+[node name="CreateBurger" type="Node" parent="."]
+script = ExtResource("1_ew12f")
+burger_part = ExtResource("2_7edkd")

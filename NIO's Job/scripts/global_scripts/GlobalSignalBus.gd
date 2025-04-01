@@ -34,5 +34,5 @@ signal score_is_full
 
 #region 汉堡店员
 @warning_ignore("unused_signal")
-signal burger_part_is_picked(type: BurgerPartStats.PartType)
+signal burger_part_is_picked(type: BurgerPartStats)
 #endregion
