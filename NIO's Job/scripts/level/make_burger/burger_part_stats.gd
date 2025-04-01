@@ -29,7 +29,7 @@ const UsedPartSprite := {
 	PartType.黄瓜: "res://assets/images/level_make_burger/burger_cucumber.png"
 }
 
-const PickedOffset := {
+const CreateOffset := {
 	PartType.汉堡上: Vector2(0, 13),
 	PartType.汉堡下: Vector2(0, 8),
 	PartType.肉饼: Vector2(0, 6),

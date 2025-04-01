@@ -34,6 +34,7 @@ func _create_burger_part(_type) -> void:
 
 
 func _calculate_create_position() -> void:
+	offset = BurgerPartStats.CreateOffset[last_packed_burger_part.type]
 	target_position = bottom_position + ((packed_burger_part.size() - 1) * offset)
 
 	pass
