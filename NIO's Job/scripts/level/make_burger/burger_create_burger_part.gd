@@ -39,6 +39,7 @@ func _create_burger_part(_type) -> void:
 # 增加汉堡数组————————————————————
 	last_packed_part_type = _type
 	packed_burger.push_back(last_packed_part_type)
+	print(str(packed_burger))
 # 创造汉堡————————————————————
 	GlobalSignalBus.burger_part_is_created.emit(_type, initialize_position, target_position)
 	#print("发出了信号 burger_part_is_created")
