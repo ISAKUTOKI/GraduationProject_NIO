@@ -215,6 +215,7 @@ value = 50.0
 show_percentage = false
 
 [node name="YOUWON" type="Node2D" parent="."]
+visible = false
 position = Vector2(169, 78)
 rotation = -0.20679
 scale = Vector2(1.365, 1.365)

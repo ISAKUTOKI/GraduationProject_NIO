@@ -1,6 +1,8 @@
 class_name BurgerPartStats
 extends Resource
 
+@export var type: PartType
+
 enum PartType { 汉堡上, 汉堡下, 肉饼, 芝士, 芥末酱, 番茄酱, 生菜, 洋葱, 番茄, 黄瓜 }
 
 const UnusedPartSprite := {
@@ -41,5 +43,3 @@ const CreateOffset := {
 	PartType.番茄: Vector2(0, 3),
 	PartType.黄瓜: Vector2(0, 1)
 }
-
-@export var type: PartType

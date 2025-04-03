@@ -15,7 +15,7 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if is_in_test:
 		if Input.is_key_pressed(KEY_F12):
-			score_demand_multiplier = 1
+			score_demand_multiplier = 10
 
 
 func _on_data_gain_score(_score: int, _position: Vector2) -> void:
