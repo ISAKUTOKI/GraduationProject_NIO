@@ -31,7 +31,7 @@ func _on_data_gain_score(_score: int, _position: Vector2) -> void:
 func _change_progress_bar(_value: float) -> void:
 	if progress_bar.value >= 100:
 		print("进度条已满")
-		GlobalSignalBus.score_is_full.emit()
+		GlobalSignalBus.data_score_is_full.emit()
 	else:
 		progress_bar.value += _value
 		print("当前进度条为： " + str(progress_bar.value))

@@ -5,6 +5,33 @@ extends Resource
 
 enum PartType { 汉堡上, 汉堡下, 肉饼, 芝士, 芥末酱, 番茄酱, 生菜, 洋葱, 番茄, 黄瓜 }
 
+const PartTypeNumber := {
+	PartType.汉堡上: 0,
+	PartType.汉堡下: 1,
+	PartType.肉饼: 2,
+	PartType.芝士: 3,
+	PartType.芥末酱: 4,
+	PartType.番茄酱: 5,
+	PartType.生菜: 6,
+	PartType.洋葱: 7,
+	PartType.番茄: 8,
+	PartType.黄瓜: 9
+}
+
+const PartTypeName := {
+	PartType.汉堡上: "汉堡上",
+	PartType.汉堡下: "汉堡下",
+	PartType.肉饼: "肉饼",
+	PartType.芝士: "芝士",
+	PartType.芥末酱: "芥末酱",
+	PartType.番茄酱: "番茄酱",
+	PartType.生菜: "生菜",
+	PartType.洋葱: "洋葱",
+	PartType.番茄: "番茄",
+	PartType.黄瓜: "黄瓜"
+}
+
+
 const UnusedPartSprite := {
 	PartType.汉堡上: "res://assets/images/level_make_burger/bread_up.png",
 	PartType.汉堡下: "res://assets/images/level_make_burger/bread_low.png",

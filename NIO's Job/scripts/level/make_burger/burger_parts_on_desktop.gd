@@ -12,8 +12,7 @@ var mouse_is_in_area: bool = false
 
 
 func _ready() -> void:
-	if Engine.is_editor_hint():
-		return
+	pass
 
 
 func _input(event: InputEvent) -> void:

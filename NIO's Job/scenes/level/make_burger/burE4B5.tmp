@@ -1,0 +1,151 @@
+[gd_scene load_steps=26 format=3 uid="uid://bh7jer1dduvl2"]
+
+[ext_resource type="PackedScene" uid="uid://ciljaucdsdwlu" path="res://scenes/scene_object/main_camera.tscn" id="1_v8eew"]
+[ext_resource type="Texture2D" uid="uid://cb31qp0owitpr" path="res://assets/images/level_make_burger/work_place.png" id="2_khye8"]
+[ext_resource type="PackedScene" uid="uid://b2sfsvr6r45n8" path="res://scenes/level/make_burger/burger_part_on_desktop.tscn" id="3_2g3dr"]
+[ext_resource type="Resource" uid="uid://dufhodib8mi3a" path="res://datas/burger_types/ketchup.tres" id="4_kcyt4"]
+[ext_resource type="Resource" uid="uid://2a2upe3whcrg" path="res://datas/burger_types/mustard.tres" id="5_cxpu8"]
+[ext_resource type="Resource" uid="uid://dss7j3abd7s81" path="res://datas/burger_types/cheese.tres" id="6_gw0xd"]
+[ext_resource type="Resource" uid="uid://cjx7rffwh3onj" path="res://datas/burger_types/onion.tres" id="7_4hbxn"]
+[ext_resource type="Resource" uid="uid://bhsmpn4yi5j5i" path="res://datas/burger_types/tomato.tres" id="8_lyqwu"]
+[ext_resource type="Resource" uid="uid://dtg2pwuu77ekq" path="res://datas/burger_types/burger_up.tres" id="9_cvg7f"]
+[ext_resource type="Resource" uid="uid://bbtitw1jcgq2g" path="res://datas/burger_types/burger_down.tres" id="10_ch48e"]
+[ext_resource type="Resource" uid="uid://cmg0ho7y1ylw" path="res://datas/burger_types/lettuce.tres" id="11_qsx07"]
+[ext_resource type="Resource" uid="uid://dftglvj0wkff3" path="res://datas/burger_types/cucumber.tres" id="12_3tqox"]
+[ext_resource type="Resource" uid="uid://bp0mra4cf121d" path="res://datas/burger_types/meat.tres" id="13_gucsx"]
+[ext_resource type="Texture2D" uid="uid://bw07d60gwgoqf" path="res://assets/images/level_make_burger/burger_shadow.png" id="14_pcvpq"]
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_create_burger_part.gd" id="15_6ytfo"]
+[ext_resource type="PackedScene" uid="uid://dg1uy4wrgy0cr" path="res://scenes/level/make_burger/burger_part.tscn" id="16_0ikcw"]
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_create_order.gd" id="17_nj22o"]
+[ext_resource type="PackedScene" uid="uid://dwmsjs6x2lcpr" path="res://scenes/level/make_burger/burger_order.tscn" id="18_qj70k"]
+[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="19_7n0ko"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bf0dc"]
+radius = 8.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8ree"]
+radius = 8.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eqwcs"]
+radius = 16.0
+height = 50.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hdge1"]
+radius = 16.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hafhb"]
+radius = 14.0
+height = 54.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxaml"]
+radius = 17.0
+height = 56.0
+
+[node name="BugerMainDesktop" type="Node2D"]
+
+[node name="MainCamera" parent="." instance=ExtResource("1_v8eew")]
+position = Vector2(160, 90)
+
+[node name="Visual" type="CanvasGroup" parent="."]
+position = Vector2(160, 90)
+
+[node name="MainDesktop" type="Sprite2D" parent="Visual"]
+texture = ExtResource("2_khye8")
+
+[node name="PartsOnDesktop" type="Node" parent="."]
+
+[node name="Ketchup" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("4_kcyt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/Ketchup"]
+position = Vector2(291, 72)
+shape = SubResource("CapsuleShape2D_bf0dc")
+
+[node name="Mustard" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("5_cxpu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/Mustard"]
+position = Vector2(308, 98)
+shape = SubResource("CapsuleShape2D_v8ree")
+
+[node name="Chesse" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("6_gw0xd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/Chesse"]
+position = Vector2(248, 93)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_eqwcs")
+
+[node name="Onion" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("7_4hbxn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PartsOnDesktop/Onion"]
+polygon = PackedVector2Array(82, 36, 127, 36, 126, 74, 76, 74)
+
+[node name="Tomato" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("8_lyqwu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PartsOnDesktop/Tomato"]
+polygon = PackedVector2Array(131, 36, 174, 36, 182.31, 74, 130.645, 74)
+
+[node name="BurgerUp" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("9_cvg7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/BurgerUp"]
+position = Vector2(170, 98)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_hdge1")
+
+[node name="BurgerDown" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("10_ch48e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/BurgerDown"]
+position = Vector2(174, 152)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_hafhb")
+
+[node name="Lettuce" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("11_qsx07")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PartsOnDesktop/Lettuce"]
+polygon = PackedVector2Array(34, 36, 77, 36, 71, 74, 20, 74)
+
+[node name="Cucumber" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("12_3tqox")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PartsOnDesktop/Cucumber"]
+polygon = PackedVector2Array(179, 36, 222, 36, 236, 74, 186.965, 74)
+
+[node name="Meat" parent="PartsOnDesktop" instance=ExtResource("3_2g3dr")]
+stats = ExtResource("13_gucsx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartsOnDesktop/Meat"]
+position = Vector2(254, 145)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_gxaml")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("14_pcvpq")
+
+[node name="CreateBurgerPart" type="Node" parent="."]
+script = ExtResource("15_6ytfo")
+burger_part = ExtResource("16_0ikcw")
+
+[node name="CreateOrder" type="Node" parent="."]
+script = ExtResource("17_nj22o")
+order = ExtResource("18_qj70k")
+create_offset = null
+
+[node name="Button" type="Button" parent="CreateOrder"]
+offset_left = 169.0
+offset_top = 6.0
+offset_right = 244.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("19_7n0ko")
+theme_override_font_sizes/font_size = 15
+text = "Create Order"
+
+[connection signal="pressed" from="CreateOrder/Button" to="CreateOrder" method="_on_button_pressed"]

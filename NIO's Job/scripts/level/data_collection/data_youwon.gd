@@ -4,11 +4,11 @@ extends Node2D
 
 
 func _ready() -> void:
-	GlobalSignalBus.score_is_full.connect(_on_score_is_full)
+	GlobalSignalBus.data_score_is_full.connect(_on_data_score_is_full)
 	visible = false
 
 
-func _on_score_is_full() -> void:
+func _on_data_score_is_full() -> void:
 	if can_show_this:
 		visible = true
 	else:

@@ -22,3 +22,11 @@ func show_outline() -> void:
 func hide_outline() -> void:
 	#print("隐藏")
 	target.material.set("shader_parameter/line_thickness", 0)
+
+
+func set_new_thickness(thickness = outline_thickness) -> void:
+	outline_thickness = thickness
+
+
+func set_new_color(color: Color = Color(1, 1, 1, 1)) -> void:
+	target.material.set("shader_parameter/line_color", color)

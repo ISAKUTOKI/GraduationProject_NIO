@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://da677b1a3hadn"]
+
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_bell.gd" id="1_e3u4j"]
+[ext_resource type="Texture2D" uid="uid://bxc3woabp534i" path="res://assets/images/level_make_burger/bell.png" id="1_fx1p3"]
+[ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/canvas_group_outline/canvas_group_outline_shader.tres" id="2_bfxt0"]
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_outline_highlighter.gd" id="2_qe376"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_575c3"]
+height = 20.0
+
+[node name="BurgerBell" type="Area2D"]
+script = ExtResource("1_e3u4j")
+
+[node name="Visuals" type="CanvasGroup" parent="."]
+material = ExtResource("2_bfxt0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("1_fx1p3")
+
+[node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("2_qe376")
+target = NodePath("../Visuals")
+outline_thickness = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -80)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_575c3")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

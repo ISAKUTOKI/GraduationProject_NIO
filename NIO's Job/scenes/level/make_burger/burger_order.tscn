@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwmsjs6x2lcpr"]
+
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_outline_highlighter.gd" id="1_cl23r"]
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_order.gd" id="1_gqtcc"]
+[ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/canvas_group_outline/canvas_group_outline_shader.tres" id="2_6fugn"]
+[ext_resource type="Texture2D" uid="uid://n76mmk0kj4yj" path="res://icon.svg" id="2_e3s1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olfsb"]
+
+[node name="BurgerOrder" type="Area2D"]
+script = ExtResource("1_gqtcc")
+
+[node name="Visuals" type="CanvasGroup" parent="."]
+material = ExtResource("2_6fugn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_e3s1w")
+
+[node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("1_cl23r")
+target = NodePath("../Visuals")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_olfsb")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

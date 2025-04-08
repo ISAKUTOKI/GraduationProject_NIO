@@ -12,7 +12,7 @@ var _score_is_full: bool = false
 
 
 func _ready() -> void:
-	GlobalSignalBus.score_is_full.connect(on_score_is_full)
+	GlobalSignalBus.data_score_is_full.connect(on_data_score_is_full)
 
 
 func _process(_delta: float) -> void:
@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 		_move_number_to_folder()
 
 
-func on_score_is_full() -> void:
+func on_data_score_is_full() -> void:
 	_score_is_full = true
 
 

@@ -5,7 +5,7 @@ extends Node
 # 记录汉堡相关
 var last_packed_part_type: BurgerPartStats
 var last_packed_part_position: Vector2
-var packed_burger: Array[BurgerPartStats] = []
+var packed_burger: Array[int] = []
 
 # 位置相关
 var y_offset: Vector2
@@ -28,20 +28,28 @@ func _on_burger_part_is_picked(_picked_type: BurgerPartStats) -> void:
 	_create_burger_part(_picked_type)
 
 
-func _create_burger_part(_type) -> void:
+func _create_burger_part(_type: BurgerPartStats) -> void:
 # 创造汉堡部件————————————————————
 	if burger_part:
 		var _part = burger_part.instantiate() as BurgerPart
 		add_child(_part)
+	else:
+		return
 # 计算位置————————————————————
 	_calculate_create_position()
 	_create_shadow()
 # 增加汉堡数组————————————————————
 	last_packed_part_type = _type
-	packed_burger.push_back(last_packed_part_type)
-	print(str(packed_burger))
+	var last_packed_part_type_number: int = BurgerPartStats.PartTypeNumber[_type.type]
+	packed_burger.push_back(last_packed_part_type_number)
+	#print(str(packed_burger))
 # 创造汉堡————————————————————
-	GlobalSignalBus.burger_part_is_created.emit(_type, initialize_position, target_position)
+	GlobalSignalBus.burger_part_is_created.emit(
+		_type, 
+		initialize_position, 
+		target_position
+		)
+	GlobalSignalBus.burger_is_packed.emit(packed_burger)
 	#print("发出了信号 burger_part_is_created")
 
 
@@ -64,3 +72,6 @@ func _create_shadow() -> void:
 		var tween = get_tree().create_tween()
 		shadow.position = target_position + Vector2(0, 5)
 		tween.tween_property(shadow, "modulate", Color(1, 1, 1, 1), 0.1)
+
+func _clear_desktop()->void:
+	pass
