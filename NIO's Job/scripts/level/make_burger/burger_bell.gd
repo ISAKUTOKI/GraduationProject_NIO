@@ -27,8 +27,6 @@ func _on_mouse_exited() -> void:
 
 func _on_burger_is_packed(_array) -> void:
 	packed_burger = _array
-	print(packed_burger)
-	pass
 
 
 func _input(event: InputEvent) -> void:
@@ -40,6 +38,7 @@ func _submit_order() -> void:
 	GlobalSignalBus.burger_order_is_submitted.emit(packed_burger)
 	#print("提交了")
 	_clear_burger_pack()
+
 
 func _clear_burger_pack() -> void:
 	packed_burger.clear()

@@ -19,7 +19,6 @@ func _ready() -> void:
 
 func _initialize(_type: BurgerOrderStats.OrderType, _position: Vector2, _z_index: int) -> void:
 	order_content = BurgerOrderStats.OrderContent[_type]
-	print("新创建的订单种类为： ", str(BurgerOrderStats.OrderName[_type]))
 	if BurgerOrderStats.OrderSprite[_type]:
 		sprite.texture = load(BurgerOrderStats.OrderSprite[_type])
 	position = _position
