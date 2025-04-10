@@ -54,8 +54,8 @@ func create_order(_is_random: bool = true, _designated_type_number: int = -1) ->
 			GlobalSignalBus.burger_order_is_created.emit(_designated_type_number, create_position, create_z_index)
 
 	_rank_burger_order()
-	print("新创建的订单种类为：", BurgerOrderStats.OrderType.keys()[order_type])
-	print("新创建的订单要求为：", BurgerOrderStats.OrderContent[order_type])
+	print("新创建的订单种类为：", BurgerOrderStats.OrderName[order_type])
+	#print("新创建的订单要求为：", BurgerOrderStats.OrderContent[order_type])
 
 
 func _calculate_create_position() -> void:
@@ -76,7 +76,7 @@ func _rank_burger_order() -> void:
 		var node = order_list[i]
 		if not is_instance_valid(node):
 			continue
-		var target_pos = initialize_position + create_offset * (i + 1)  # 关键修改：i代替i+1
+		var target_pos = initialize_position + create_offset * (i)  # 关键修改：i代替i+1
 		node.z_index = i * -1
 		current_tween.tween_property(node, "position", target_pos, 0.07)
 

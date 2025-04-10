@@ -13,8 +13,9 @@ var mouse_is_in_area: bool = false
 
 
 func _ready() -> void:
-	outline.set_new_color(Color(0, 0, 0, 1))
 	GlobalSignalBus.burger_order_is_created.connect(_initialize)
+	#await outline.ready
+	outline.set_new_color(Color(0, 0, 0, 1))
 
 
 func _initialize(_type: BurgerOrderStats.OrderType, _position: Vector2, _z_index: int) -> void:
@@ -24,6 +25,7 @@ func _initialize(_type: BurgerOrderStats.OrderType, _position: Vector2, _z_index
 	position = _position
 	target_z_index = _z_index
 	visuals.z_index = target_z_index
+	print("新创建订单的z_index为： ", visuals.z_index)
 	GlobalSignalBus.burger_order_is_created.disconnect(_initialize)
 
 
