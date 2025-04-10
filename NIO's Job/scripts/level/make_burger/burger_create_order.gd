@@ -1,5 +1,8 @@
 extends Node
 
+@onready var button: Button = $Button
+
+@export var can_use_button: bool = false
 @export var order: PackedScene
 
 # 对订单进行记录的变量
@@ -14,13 +17,15 @@ var create_z_index: int
 var current_tween: Tween = null
 
 
-func _on_button_pressed() -> void:
-	create_order()
-
-
 func _ready() -> void:
 	GlobalSignalBus.burger_create_order.connect(_on_burger_create_order)
 	GlobalSignalBus.burger_order_succeeded.connect(_on_burger_order_succeeded)
+	button.visible = can_use_button
+
+
+func _on_button_pressed() -> void:
+	if can_use_button:
+		create_order()
 
 
 func _on_burger_create_order(_bool: bool, _int: int) -> void:
@@ -47,7 +52,7 @@ func create_order(_is_random: bool = true, _designated_type_number: int = -1) ->
 		else:
 			order_type = BurgerOrderStats.OrderType.values()[_designated_type_number]
 			GlobalSignalBus.burger_order_is_created.emit(_designated_type_number, create_position, create_z_index)
-	
+
 	_rank_burger_order()
 	print("新创建的订单种类为：", BurgerOrderStats.OrderType.keys()[order_type])
 	print("新创建的订单要求为：", BurgerOrderStats.OrderContent[order_type])
