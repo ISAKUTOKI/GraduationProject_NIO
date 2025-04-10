@@ -69,15 +69,15 @@ func _rank_burger_order() -> void:
 		current_tween.kill()
 	if order_list.is_empty():
 		return
-	order_list = order_list.filter(func(node): return is_instance_valid(node) and not node.is_queued_for_deletion())
+	order_list = order_list.filter(func(node): return is_instance_valid(node))
 # 通过tween创建订单的移动————————————————————
 	current_tween = get_tree().create_tween().set_parallel(true)
 	for i in order_list.size():
 		var node = order_list[i]
 		if not is_instance_valid(node):
 			continue
-		var target_pos = initialize_position + create_offset * (i)  # 关键修改：i代替i+1
-		node.z_index = i * -1
+		var target_pos = initialize_position + create_offset * (i + 1)  # 关键修改：i代替i+1
+		node.z_index = (i + 1) * -1
 		current_tween.tween_property(node, "position", target_pos, 0.07)
 
 

@@ -146,6 +146,7 @@ script = ExtResource("17_nj22o")
 order = ExtResource("18_qj70k")
 
 [node name="Button" type="Button" parent="CreateOrder"]
+visible = false
 offset_left = 169.0
 offset_top = 6.0
 offset_right = 244.0

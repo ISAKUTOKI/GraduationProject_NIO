@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwmsjs6x2lcpr"]
+[gd_scene load_steps=7 format=3 uid="uid://dwmsjs6x2lcpr"]
 
 [ext_resource type="Script" path="res://scripts/level/make_burger/burger_outline_highlighter.gd" id="1_cl23r"]
 [ext_resource type="Script" path="res://scripts/level/make_burger/burger_order.gd" id="1_gqtcc"]
 [ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/canvas_group_outline/canvas_group_outline_shader.tres" id="2_6fugn"]
 [ext_resource type="Texture2D" uid="uid://ctlklvh0me3o8" path="res://assets/images/level_make_burger/order.png" id="3_1xit5"]
+[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="5_lycdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olfsb"]
 size = Vector2(34, 45)
@@ -17,6 +18,19 @@ material = ExtResource("2_6fugn")
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
 position = Vector2(0, 18.5)
 texture = ExtResource("3_1xit5")
+
+[node name="Label" type="Label" parent="Visuals"]
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 9.0
+offset_bottom = 7.0
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_lycdb")
+theme_override_font_sizes/font_size = 15
+text = "-99"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
 
 [node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("1_cl23r")

@@ -4,11 +4,17 @@ extends Node
 @onready var visuals: CanvasGroup = $Visuals
 
 var mouse_is_in_area: bool = false
+var can_click_bell: bool = false
 var packed_burger := []
 
 
 func _ready() -> void:
 	GlobalSignalBus.burger_is_packed.connect(_on_burger_is_packed)
+	GlobalSignalBus.burger_is_ready_for_start_stage.connect(_on_burger_is_ready_for_start_stage)
+
+
+func _on_burger_is_ready_for_start_stage() -> void:
+	can_click_bell = true
 
 
 func _on_mouse_entered() -> void:
@@ -30,7 +36,7 @@ func _on_burger_is_packed(_array) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if mouse_is_in_area and event.is_action_pressed("select"):
+	if mouse_is_in_area and can_click_bell and event.is_action_pressed("select"):
 		_submit_order()
 
 
