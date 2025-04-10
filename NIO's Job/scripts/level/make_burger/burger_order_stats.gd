@@ -1,7 +1,14 @@
 class_name BurgerOrderStats
 extends Node
 
-enum OrderType { 普通汉堡, 芝士汉堡, 芝士双层堡, 素食主义汉堡, 豪华蟹黄堡, 全麦汉堡, }
+enum OrderType {
+	普通汉堡,
+	芝士汉堡,
+	芝士双层堡,
+	素食主义汉堡,
+	豪华蟹黄堡,
+	全麦汉堡,
+}
 
 const OrderContent := {
 	OrderType.普通汉堡: [1, 2, 4, 6, 7, 0],
@@ -13,20 +20,20 @@ const OrderContent := {
 }
 
 const OrderSprite := {
-	OrderType.普通汉堡: "",
-	OrderType.芝士汉堡: "",
-	OrderType.芝士双层堡: "",
-	OrderType.素食主义汉堡: "",
-	OrderType.豪华蟹黄堡: "",
-	OrderType.全麦汉堡: "",
+	OrderType.普通汉堡: "res://assets/images/level_make_burger/order_normal.png",
+	OrderType.芝士汉堡: "res://assets/images/level_make_burger/order_cheese.png",
+	OrderType.芝士双层堡: "res://assets/images/level_make_burger/order_double_cheese.png",
+	OrderType.素食主义汉堡: "res://assets/images/level_make_burger/order_vegetable.png",
+	OrderType.豪华蟹黄堡: "res://assets/images/level_make_burger/order_king.png",
+	OrderType.全麦汉堡: "res://assets/images/level_make_burger/order_pure_sale.png",
 }
 
 const OrderName := {
-	OrderType.普通汉堡: "普通汉堡", 
-	OrderType.芝士汉堡: "芝士汉堡", 
-	OrderType.芝士双层堡: "芝士双层堡", 
-	OrderType.素食主义汉堡: "素食主义汉堡", 
-	OrderType.豪华蟹黄堡: "三层超豪华四乘四新鲜的泛着光经过高压了的低脂蟹皇堡", 
+	OrderType.普通汉堡: "普通汉堡",
+	OrderType.芝士汉堡: "芝士汉堡",
+	OrderType.芝士双层堡: "芝士双层堡",
+	OrderType.素食主义汉堡: "素食主义汉堡",
+	OrderType.豪华蟹黄堡: "三层超豪华四乘四新鲜的泛着光经过高压了的低脂蟹皇堡",
 	OrderType.全麦汉堡: "全麦汉堡",
 }
 #const PartTypeNumber := {
