@@ -11,7 +11,7 @@ enum OrderType {
 }
 
 const OrderContent := {
-	OrderType.普通汉堡: [1, 2, 4, 6, 7, 0],
+	OrderType.普通汉堡: [1, 2, 6, 7, 4, 0],
 	OrderType.芝士汉堡: [1, 2, 3, 6, 5, 0],
 	OrderType.芝士双层堡: [1, 2, 3, 2, 3, 6, 5, 0],
 	OrderType.素食主义汉堡: [1, 6, 7, 4, 8, 9, 0],
