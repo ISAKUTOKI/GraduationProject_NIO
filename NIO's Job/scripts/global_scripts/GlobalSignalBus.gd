@@ -40,6 +40,8 @@ signal burger_part_is_created(part_type: BurgerPartStats, from: Vector2, to: Vec
 @warning_ignore("unused_signal")
 signal burger_is_packed(packed_burger: Array)
 @warning_ignore("unused_signal")
+signal burger_create_order(order_create_is_random: bool, designated_order_type_number: int)
+@warning_ignore("unused_signal")
 signal burger_order_is_created(order_type: BurgerOrderStats.OrderType, create_position: Vector2, create_z_index: int)
 @warning_ignore("unused_signal")
 signal burger_order_is_submitted(order_type: BurgerOrderStats.OrderType)
@@ -49,4 +51,6 @@ signal burger_order_succeeded
 signal burger_order_failed
 @warning_ignore("unused_signal")
 signal burger_is_ok_to_clear
+@warning_ignore("unused_signal")
+signal burger_is_ready_for_start_stage
 #endregion

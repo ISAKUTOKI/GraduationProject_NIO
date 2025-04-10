@@ -1,7 +1,7 @@
 class_name BurgerOrderStats
 extends Node
 
-enum OrderType { 普通汉堡, 芝士汉堡, 芝士双层堡, 素食主义汉堡, 豪华蟹黄堡, 全麦汉堡 }
+enum OrderType { 普通汉堡, 芝士汉堡, 芝士双层堡, 素食主义汉堡, 豪华蟹黄堡, 全麦汉堡, }
 
 const OrderContent := {
 	OrderType.普通汉堡: [1, 2, 4, 6, 7, 0],
@@ -9,7 +9,7 @@ const OrderContent := {
 	OrderType.芝士双层堡: [1, 2, 3, 2, 3, 6, 5, 0],
 	OrderType.素食主义汉堡: [1, 6, 7, 4, 8, 9, 0],
 	OrderType.豪华蟹黄堡: [1, 2, 6, 3, 7, 8, 4, 5, 9, 0],
-	OrderType.全麦汉堡: [1, 2, 5, 0]
+	OrderType.全麦汉堡: [1, 2, 5, 0],
 }
 
 const OrderSprite := {
@@ -22,7 +22,12 @@ const OrderSprite := {
 }
 
 const OrderName := {
-	OrderType.普通汉堡: "普通汉堡", OrderType.芝士汉堡: "芝士汉堡", OrderType.芝士双层堡: "芝士双层堡", OrderType.素食主义汉堡: "素食主义汉堡", OrderType.豪华蟹黄堡: "三层超豪华四乘四新鲜的泛着光经过高压了的低脂蟹皇堡", OrderType.全麦汉堡: "全麦汉堡"
+	OrderType.普通汉堡: "普通汉堡", 
+	OrderType.芝士汉堡: "芝士汉堡", 
+	OrderType.芝士双层堡: "芝士双层堡", 
+	OrderType.素食主义汉堡: "素食主义汉堡", 
+	OrderType.豪华蟹黄堡: "三层超豪华四乘四新鲜的泛着光经过高压了的低脂蟹皇堡", 
+	OrderType.全麦汉堡: "全麦汉堡",
 }
 #const PartTypeNumber := {
 #PartType.汉堡上: 0,

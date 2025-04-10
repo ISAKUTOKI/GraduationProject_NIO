@@ -12,9 +12,9 @@ func _ready() -> void:
 	_initialize_score()
 
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if is_in_test:
-		if Input.is_key_pressed(KEY_F12):
+		if event.is_action_pressed("test"):
 			score_demand_multiplier = 10
 
 
