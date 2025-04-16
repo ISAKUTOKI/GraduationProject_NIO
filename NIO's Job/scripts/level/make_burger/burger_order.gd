@@ -19,8 +19,8 @@ func _ready() -> void:
 	outline.set_new_color(Color(0, 0, 0, 1))
 
 
-func _process(_delta: float) -> void:
-	label.text = str(z_index)
+#func _process(_delta: float) -> void:
+	#label.text = str(z_index)
 
 
 func _initialize(_type: BurgerOrderStats.OrderType, _position: Vector2, _z_index: int) -> void:
