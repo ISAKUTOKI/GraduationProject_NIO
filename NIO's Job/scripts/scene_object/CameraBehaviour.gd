@@ -8,6 +8,7 @@ var current_scene_have_player: bool = false
 
 
 func _ready():
+	add_to_group("camera")
 	_try_to_find_player()
 	GlobalSignalBus.player_is_dead.connect(_on_target_destroyed)
 

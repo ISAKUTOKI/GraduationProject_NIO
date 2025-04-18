@@ -14,9 +14,9 @@ var mouse_is_in_area: bool = false
 
 
 func _ready() -> void:
-	GlobalSignalBus.burger_order_is_created.connect(_initialize)
-	#await outline.ready
-	outline.set_new_color(Color(0, 0, 0, 1))
+	if not Engine.is_editor_hint():
+		GlobalSignalBus.burger_order_is_created.connect(_initialize)
+		outline.set_new_color(Color(0, 0, 0, 1))
 
 
 #func _process(_delta: float) -> void:

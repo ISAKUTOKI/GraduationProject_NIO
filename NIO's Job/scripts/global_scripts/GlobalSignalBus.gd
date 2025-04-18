@@ -46,6 +46,8 @@ signal burger_order_is_created(order_type: BurgerOrderStats.OrderType, create_po
 @warning_ignore("unused_signal")
 signal burger_order_is_submitted(order_type: BurgerOrderStats.OrderType)
 @warning_ignore("unused_signal")
+signal burger_final_burger_is_ok
+@warning_ignore("unused_signal")
 signal burger_order_succeeded
 @warning_ignore("unused_signal")
 signal burger_order_failed

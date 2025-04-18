@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cv1blgmhlybtc"]
+
+[ext_resource type="Script" path="res://scripts/level/make_burger/burger_submit_effect.gd" id="1_l0gvw"]
+[ext_resource type="Texture2D" uid="uid://cjnrajj1gg3hs" path="res://assets/images/level_make_burger/hand_normal.png" id="2_4e730"]
+[ext_resource type="Texture2D" uid="uid://dvw4k7njjbvl5" path="res://assets/images/level_make_burger/hand_bang.png" id="3_a86u7"]
+[ext_resource type="Texture2D" uid="uid://c1dvskhd8dljq" path="res://assets/images/level_make_burger/hand_push.png" id="4_e2ls4"]
+[ext_resource type="Texture2D" uid="uid://jdjcr3ylui61" path="res://assets/images/level_make_burger/final_burger.png" id="5_r2ota"]
+[ext_resource type="Texture2D" uid="uid://bw07d60gwgoqf" path="res://assets/images/level_make_burger/burger_shadow.png" id="6_ltspj"]
+
+[node name="BurgerSubmitEffect" type="Node"]
+script = ExtResource("1_l0gvw")
+
+[node name="NormalHand" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource("2_4e730")
+
+[node name="BangHand" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource("3_a86u7")
+
+[node name="PushHand" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource("4_e2ls4")
+
+[node name="FinalBurger" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+texture = ExtResource("5_r2ota")
+
+[node name="Sprite2D" type="Sprite2D" parent="FinalBurger"]
+z_index = -1
+position = Vector2(-2, 13)
+scale = Vector2(1.42593, 0.945735)
+texture = ExtResource("6_ltspj")
+
+[node name="TestButton" type="Button" parent="."]
+visible = false
+offset_right = 86.0
+offset_bottom = 31.0
+
+[connection signal="button_down" from="TestButton" to="." method="_on_test_button_button_down"]
