@@ -165,6 +165,8 @@ script = ExtResource("21_2t8gk")
 one_shot = true
 script = ExtResource("22_wfrva")
 is_in_test = true
+current_stage_timer = 90.0
+create_order_interval = Vector2i(2, 4)
 
 [node name="OrderCreateTimer" type="Timer" parent="StageTimer"]
 one_shot = true

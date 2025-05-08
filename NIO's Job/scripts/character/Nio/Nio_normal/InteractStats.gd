@@ -1,4 +1,6 @@
+class_name InteractStats
 extends Node
+
 
 #region InteractType 互动类型
 enum InteractType { TALK, BOX_TALK, USE, PICK_UP }

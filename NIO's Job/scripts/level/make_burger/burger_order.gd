@@ -7,6 +7,7 @@ extends Area2D
 @onready var outline: BurgerOutlineHighlighter = $OutlineHighlighter
 @onready var label: Label = $Visuals/Label
 
+
 var order_content := []
 var target_z_index: int
 

@@ -83,7 +83,7 @@ func _show_dialog(index):
 	var _dialog = dialogs[current_dialog]
 	#print("正在显示对话：", _dialog)
 
-	avatar_pic.texture = GlobalVarBus.AVATAR_MAP.get(_dialog.avatar, null)
+	avatar_pic.texture = InteractStats.AVATAR_MAP.get(_dialog.avatar, null)
 
 	text_content.text = _dialog.text
 	text_content.visible_ratio = 0.0

@@ -141,6 +141,12 @@ libraries = {
 }
 autoplay = "float_dialog_posotion"
 
+[node name="FloatDialogBox" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("7_4e8sc")]
+position = Vector2(250, 58)
+target_node = NodePath("../FloatDialogArea")
+
+[node name="BottomDialogBox" parent="." instance=ExtResource("7_3xrrc")]
+
 [node name="BottomDialogArea" parent="." instance=ExtResource("2_ia1hm")]
 position = Vector2(131, 77)
 _interact_type = 1
@@ -151,9 +157,3 @@ texture = ExtResource("5_wu2l3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDialogArea"]
 shape = SubResource("RectangleShape2D_jqd4h")
-
-[node name="FloatDialogBox" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("7_4e8sc")]
-position = Vector2(250, 58)
-target_node = NodePath("../FloatDialogArea")
-
-[node name="BottomDialogBox" parent="." instance=ExtResource("7_3xrrc")]

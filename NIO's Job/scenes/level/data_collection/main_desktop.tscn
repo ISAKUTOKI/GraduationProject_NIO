@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dcl0k2lqeonkf"]
+[gd_scene load_steps=24 format=3 uid="uid://cegfl8gydng0q"]
 
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_generate_cell_numbers.gd" id="1_ngin2"]
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_score.gd" id="1_wg56e"]

@@ -8,15 +8,15 @@ func _ready() -> void:  # 通过信号捕捉互动动作
 
 
 #region 处理互动类型
-func _interact(_interact_type: GlobalVarBus.InteractType):
+func _interact(_interact_type: InteractStats.InteractType):
 	match _interact_type:
-		GlobalVarBus.InteractType.TALK:
+		InteractStats.InteractType.TALK:
 			_talk_interact()
-		GlobalVarBus.InteractType.BOX_TALK:
+		InteractStats.InteractType.BOX_TALK:
 			_box_talk_interact()
-		GlobalVarBus.InteractType.USE:
+		InteractStats.InteractType.USE:
 			_use_interact()
-		GlobalVarBus.InteractType.PICK_UP:
+		InteractStats.InteractType.PICK_UP:
 			_pick_up_interact()
 
 #endregion

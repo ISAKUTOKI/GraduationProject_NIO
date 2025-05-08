@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var _interact_type: GlobalVarBus.InteractType = GlobalVarBus.InteractType.TALK
+@export var _interact_type: InteractStats.InteractType = InteractStats.InteractType.TALK
 
 var target_group: String = "player"
 var player_is_in_interact_area: bool = false

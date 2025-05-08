@@ -107,11 +107,11 @@ script = ExtResource("14_kx7io")
 [node name="interact" type="Node" parent="."]
 script = ExtResource("3_x42f3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animator" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_m06no")
 animation = &"F_idle"
 speed_scale = 1.2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_f0ocd")

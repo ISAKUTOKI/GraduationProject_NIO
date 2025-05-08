@@ -20,7 +20,6 @@ run/snap/snap_2d_transforms_to_pixel=true
 [autoload]
 
 GlobalSignalBus="*res://scripts/global_scripts/GlobalSignalBus.gd"
-GlobalVarBus="*res://scripts/global_scripts/GlobalVarBus.gd"
 SceneManager="*res://scripts/system/SceneManager.gd"
 
 [display]
