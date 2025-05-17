@@ -15,9 +15,13 @@ var distance_to_mouse: float
 var is_picked: bool = false
 
 var can_change_number_visuals: bool = false
+
+
 func _ready() -> void:
 	target.number_is_ready.connect(_on_number_is_ready)
 	target.number_is_picked.connect(_on_number_is_picked)
+
+
 func _process(delta: float) -> void:
 	if can_change_number_visuals:
 		if not is_picked:
@@ -26,17 +30,27 @@ func _process(delta: float) -> void:
 			_shake_number(delta)
 		else:
 			target.modulate = Color(1, 1, 1, 1)
+
+
 func _on_number_is_ready() -> void:
 	original_position = target.global_position
 	original_rotation = target.rotation_degrees
 	can_change_number_visuals = true
+
+
 func _on_number_is_picked() -> void:
 	is_picked = true
+
+
 func _get_mouse_distance() -> void:
 	distance_to_mouse = (target.global_position - target.get_global_mouse_position()).length()
+
+
 func _change_alpha() -> void:
 	var _alpha = clamp(1.0 - (distance_to_mouse / affected_distance), min_alpha, 1.0)
 	target.modulate = Color(number_color.r, number_color.g, number_color.b, _alpha)
+
+
 # 震动数字的方法
 func _shake_number(_delta) -> void:
 	var strength = clamp(1.0 - distance_to_mouse / affected_distance, 0.0, 1.0)

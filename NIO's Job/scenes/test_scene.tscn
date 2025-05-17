@@ -157,3 +157,5 @@ texture = ExtResource("5_wu2l3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomDialogArea"]
 shape = SubResource("RectangleShape2D_jqd4h")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

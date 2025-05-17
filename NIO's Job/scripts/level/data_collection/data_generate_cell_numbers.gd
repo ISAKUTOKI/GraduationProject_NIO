@@ -16,7 +16,6 @@ func _regenerate_all_numbers():
 	for child in get_children():
 		if child is DataCellNumber:
 			child.queue_free()
-
 # 计算行列容量————————————————————
 	var cols = floori((spawn_rect.size.x - spacing.x) / spacing.x) + 1
 	var rows = floori((spawn_rect.size.y - spacing.y) / spacing.y) + 1
