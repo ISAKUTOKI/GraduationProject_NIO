@@ -46,6 +46,7 @@ func _on_box_talk_interacted():
 	_load_dialogs_for_interaction(interaction_count)  # 加载对应次数的对话
 	_show_bottom_dialog_box()  # 显示对话
 
+
 func _load_dialogs_for_interaction(count: int):
 	for dia in all_dialogs:
 		if dia.interaction_count == count:
@@ -53,6 +54,7 @@ func _load_dialogs_for_interaction(count: int):
 			return
 	# 如果没有找到对应次数的对话，使用默认内容
 	dialogs = [{"avatar": "Nio_normal_null", "text": "没有更多对话了。"}]
+
 
 #region 切换底部对话框可见性
 func _show_bottom_dialog_box():
@@ -64,6 +66,8 @@ func _hide_bottom_dialog_box():
 	self.visible = false
 	current_dialog = 0
 	dialogs = []
+
+
 #endregion
 
 
