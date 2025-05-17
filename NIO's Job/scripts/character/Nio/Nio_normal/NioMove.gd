@@ -26,13 +26,13 @@ func _on_interaction_started(_interact_type = null):
 	can_move = false
 	match last_direction:
 		"up":
-			$"../AnimatedSprite2D".play("B_idle")
+			$"../Animator".play("B_idle")
 		"down":
-			$"../AnimatedSprite2D".play("F_idle")
+			$"../Animator".play("F_idle")
 		"left":
-			$"../AnimatedSprite2D".play("L_idle")
+			$"../Animator".play("L_idle")
 		"right":
-			$"../AnimatedSprite2D".play("R_idle")
+			$"../Animator".play("R_idle")
 
 
 func _on_interaction_ended():
