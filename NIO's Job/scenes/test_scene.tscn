@@ -1,20 +1,12 @@
-[gd_scene load_steps=17 format=4 uid="uid://cwvm2g82eig0"]
+[gd_scene load_steps=13 format=4 uid="uid://cwvm2g82eig0"]
 
-[ext_resource type="PackedScene" uid="uid://c6aq5uull6ihl" path="res://scenes/scene_object/kill_zone.tscn" id="1_40gss"]
 [ext_resource type="PackedScene" uid="uid://ciljaucdsdwlu" path="res://scenes/scene_object/main_camera.tscn" id="1_dyg07"]
 [ext_resource type="PackedScene" uid="uid://cxm7w3d4eqe80" path="res://scenes/scene_object/interact_area.tscn" id="2_ia1hm"]
-[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="4_5h6cv"]
 [ext_resource type="PackedScene" uid="uid://byo2xx0o7wna2" path="res://scenes/character/Nio_normal.tscn" id="4_ve3n2"]
 [ext_resource type="Texture2D" uid="uid://n76mmk0kj4yj" path="res://icon.svg" id="5_wu2l3"]
 [ext_resource type="PackedScene" uid="uid://c4caqaf22lefp" path="res://scenes/ui/bottom_dialog_box.tscn" id="7_3xrrc"]
 [ext_resource type="PackedScene" uid="uid://cl8irlb7hl2mw" path="res://scenes/ui/float_dialog_box.tscn" id="7_4e8sc"]
 [ext_resource type="TileSet" uid="uid://ckmlbdhhhp68a" path="res://assets/images/tile_map/Nio_bedroom.tres" id="9_ne7ow"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfojj"]
-size = Vector2(16, 199)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nl1f"]
-size = Vector2(335, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy8gy"]
 
@@ -66,66 +58,6 @@ position = Vector2(180, 87)
 scale = Vector2(1.88, 1.88)
 
 [node name="MainCamera" parent="." instance=ExtResource("1_dyg07")]
-
-[node name="KillZone" parent="." instance=ExtResource("1_40gss")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(319, 90.5)
-shape = SubResource("RectangleShape2D_yfojj")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(0, 89)
-shape = SubResource("RectangleShape2D_yfojj")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(163.5, 179)
-shape = SubResource("RectangleShape2D_0nl1f")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(161, -4)
-shape = SubResource("RectangleShape2D_0nl1f")
-
-[node name="Label" type="Label" parent="KillZone"]
-offset_left = 10.0
-offset_top = -1.0
-offset_right = 316.0
-offset_bottom = 22.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_5h6cv")
-theme_override_font_sizes/font_size = 15
-text = "—————————————————————————"
-
-[node name="Label2" type="Label" parent="KillZone"]
-offset_left = 9.0
-offset_top = 161.0
-offset_right = 316.0
-offset_bottom = 184.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_5h6cv")
-theme_override_font_sizes/font_size = 15
-text = "—————————————————————————"
-
-[node name="Label3" type="Label" parent="KillZone"]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 176.0
-offset_bottom = 31.0
-rotation = 1.5708
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_5h6cv")
-theme_override_font_sizes/font_size = 15
-text = "—————————————"
-
-[node name="Label4" type="Label" parent="KillZone"]
-offset_left = 319.0
-offset_top = 8.0
-offset_right = 483.0
-offset_bottom = 31.0
-rotation = 1.5708
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_5h6cv")
-theme_override_font_sizes/font_size = 15
-text = "—————————————"
 
 [node name="FloatDialogArea" parent="." instance=ExtResource("2_ia1hm")]
 visible = false

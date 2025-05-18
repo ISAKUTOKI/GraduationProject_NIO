@@ -3,7 +3,7 @@ extends Node
 var is_interacting: bool = false
 
 
-func _ready() -> void:  # 通过信号捕捉互动动作
+func _ready() -> void:
 	GlobalSignalBus.interaction_started.connect(_interact)
 
 
