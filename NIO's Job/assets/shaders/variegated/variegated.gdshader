@@ -14,19 +14,19 @@ float rand(vec2 uv) {
 void fragment() {
     // 原始颜色
     vec4 color = texture(TEXTURE, UV);
-    
+
     // 动态噪声UV
     vec2 noise_uv = UV * scale;
     if (speed > 0.0) {
         noise_uv += TIME * speed;
     }
-    
+
     // 生成噪声值 (-1到1范围)
     float noise = rand(noise_uv) * 2.0 - 1.0;
-    
+
     // 应用颜色偏移
     vec3 color_offset = noise * color_variation * amount;
-    
+
     // 混合结果
     COLOR.rgb = color.rgb + color_offset;
     COLOR.a = color.a; // 保持原始Alpha
