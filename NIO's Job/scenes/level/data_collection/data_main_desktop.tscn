@@ -160,6 +160,7 @@ script = ExtResource("3_1ada8")
 data_cell_numbers = ExtResource("4_xcuux")
 
 [node name="TestCamera" parent="." instance=ExtResource("5_4jpsw")]
+visible = false
 position = Vector2(160, 90)
 is_in_test = true
 camera_move_speed = 50.0

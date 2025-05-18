@@ -1,35 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl8irlb7hl2mw"]
+[gd_scene load_steps=2 format=3 uid="uid://cl8irlb7hl2mw"]
 
-[ext_resource type="Texture2D" uid="uid://duc4ngcpx733j" path="res://assets/dialog_things/float_dialog_box/float_dialog_box_null.png" id="1_hlwhx"]
 [ext_resource type="Script" path="res://scripts/ui/FloatDialogBox.gd" id="1_k4e32"]
-[ext_resource type="FontFile" uid="uid://cfetmpgabk48v" path="res://assets/fonts/WenQuanYi.Bitmap.Song.12px.ttf" id="5_hcxr8"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wckq"]
-texture = ExtResource("1_hlwhx")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
 
 [node name="FloatDialogBox" type="Node2D"]
 script = ExtResource("1_k4e32")
-
-[node name="Text" type="Label" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -32.0
-offset_right = 16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_hcxr8")
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxTexture_5wckq")
-text = "测试文本测试测试文本
-测试文本"
-horizontal_alignment = 1
-vertical_alignment = 1

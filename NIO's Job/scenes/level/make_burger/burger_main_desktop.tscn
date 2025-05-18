@@ -172,6 +172,7 @@ create_order_interval = Vector2i(2, 4)
 one_shot = true
 
 [node name="Label" type="Label" parent="StageTimer"]
+visible = false
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 36.0
@@ -183,6 +184,7 @@ text = "test12"
 max_lines_visible = 1
 
 [node name="Label2" type="Label" parent="StageTimer"]
+visible = false
 offset_left = 4.0
 offset_top = 18.0
 offset_right = 36.0

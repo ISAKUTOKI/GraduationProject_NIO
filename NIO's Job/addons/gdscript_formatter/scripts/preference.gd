@@ -56,7 +56,7 @@ var _version := "v0.2.0"
 
 ## If true, will skip safety checks.
 ## 如果开启，则跳过安全检查。
-@export var fast_but_unsafe := false:
+@export var fast_but_unsafe := true:
 	set(v):
 		fast_but_unsafe = v
 		emit_changed()
