@@ -9,11 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cl8irlb7hl2mw" path="res://scenes/ui/float_dialog_box.tscn" id="7_4e8sc"]
 [ext_resource type="TileSet" uid="uid://ckmlbdhhhp68a" path="res://assets/images/tile_map/Nio_bedroom.tres" id="9_ne7ow"]
 
-[sub_resource type="Resource" id="Resource_14w4h"]
+[sub_resource type="Resource" id="Resource_631tf"]
 script = ExtResource("4_0vlfi")
-type = 1
-float_talk_path = 1
-bottom_talk_path = 0
+interact_type = 1
+float_talk = 0
+buttom_talk = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy8gy"]
 
@@ -56,11 +56,11 @@ _data = {
 "float_dialog_posotion": SubResource("Animation_fvfyy")
 }
 
-[sub_resource type="Resource" id="Resource_35jk6"]
+[sub_resource type="Resource" id="Resource_60p0y"]
 script = ExtResource("4_0vlfi")
-type = 2
-float_talk_path = 0
-bottom_talk_path = 1
+interact_type = 2
+float_talk = null
+buttom_talk = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqd4h"]
 
@@ -75,7 +75,7 @@ scale = Vector2(1.88, 1.88)
 
 [node name="FloatDialogArea" parent="." instance=ExtResource("2_ia1hm")]
 position = Vector2(228, 77)
-type = SubResource("Resource_14w4h")
+interaction = SubResource("Resource_631tf")
 
 [node name="Sprite2D" type="Sprite2D" parent="FloatDialogArea"]
 scale = Vector2(0.15, 0.15)
@@ -91,9 +91,8 @@ libraries = {
 autoplay = "float_dialog_posotion"
 
 [node name="BottomDialogArea" parent="." instance=ExtResource("2_ia1hm")]
-visible = false
 position = Vector2(131, 77)
-type = SubResource("Resource_35jk6")
+interaction = SubResource("Resource_60p0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="BottomDialogArea"]
 scale = Vector2(0.15, 0.15)

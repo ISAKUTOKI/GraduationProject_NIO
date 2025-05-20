@@ -13,7 +13,6 @@ var all_dialogs = []  # 存储所有对话内容
 
 func _ready() -> void:
 	_hide_bottom_dialog_box()
-	_load_dialogs_from_json("res://dialogs/bottom_dialogs/test_bottom_dialog.json")
 # 连接信号
 	GlobalSignalBus.box_talk_interacted.connect(_on_box_talk_interacted)
 
@@ -35,13 +34,14 @@ func _load_dialogs_from_json(file_path: String):
 		return
 
 	all_dialogs = json.data  # 存储所有对话内容
-	print("加载对话组数量：", all_dialogs.size())
+	#print("加载对话组数量：", all_dialogs.size())
 
 
 #endregion
 
 
-func _on_box_talk_interacted():
+func _on_box_talk_interacted(dialog_path):
+	_load_dialogs_from_json(dialog_path)
 	interaction_count += 1
 	_load_dialogs_for_interaction(interaction_count)  # 加载对应次数的对话
 	_show_bottom_dialog_box()  # 显示对话
@@ -73,6 +73,7 @@ func _hide_bottom_dialog_box():
 
 #region 显示内容
 func _show_dialog(index):
+# 设置索引————————————————————
 	if index < 0 or index >= dialogs.size():
 		#print("无效索引：", index)
 		_hide_bottom_dialog_box()
@@ -82,11 +83,21 @@ func _show_dialog(index):
 	var _dialog = dialogs[current_dialog]
 	#print("正在显示对话：", _dialog)
 
-	avatar_pic.texture = InteractStats.AVATAR_MAP.get(_dialog.avatar, null)
+# 设置头像————————————————————
+	var _dia_ava
+	if _dialog.has("avatar"):
+		_dia_ava = InteractStats.AVATAR_MAP.get(_dialog.avatar, null)
+		print("有头像，为： ", str(_dialog.avatar))
+	else:
+		_dia_ava = "Nio_normal_null"
+		push_error("当前对话没有正确设置头像键，默认： ", str(_dia_ava))
+	avatar_pic.texture = InteractStats.AVATAR_MAP.get(_dia_ava, null)
 
+# 设置文本————————————————————
 	text_content.text = _dialog.text
 	text_content.visible_ratio = 0.0
 
+# 设置动画————————————————————
 	if tween:
 		tween.kill()
 		tween = null

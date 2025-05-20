@@ -22,7 +22,7 @@ func _process(delta: float) -> void:  # 移动监测
 
 
 #region 当互动时无法移动
-func _on_interaction_started(_interact_type = null):
+func _on_interaction_started(_interaction):
 	can_move = false
 	match last_direction:
 		"up":

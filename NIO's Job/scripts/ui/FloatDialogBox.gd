@@ -12,12 +12,9 @@ var tween: Tween
 var interaction_count: int = 0  # 记录互动次数
 var all_dialogs = []  # 存储所有对话内容
 
-@export var dialog_path: String = "res://dialogs/float_dialogs/test_float_dialog.json"
-
 
 func _ready() -> void:
 	_hide_float_dialog_box()
-	_load_dialogs_from_json(dialog_path)
 # 连接信号
 	GlobalSignalBus.talk_interacted.connect(_on_talk_interacted)
 
@@ -30,7 +27,8 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_talk_interacted():
+func _on_talk_interacted(dialog_path):
+	_load_dialogs_from_json(dialog_path)
 	interaction_count += 1
 	_load_dialogs_for_interaction(interaction_count)  # 加载对应次数的对话
 	_show_float_dialog_box(dialogs)  # 显示对话
@@ -88,6 +86,7 @@ func _float_dialog_follow_target():
 		return
 	global_position = target_node.global_position + offset
 
+
 #region 显示内容
 func _show_dialog(index):
 	if index < 0 or index >= dialogs.size():
@@ -107,7 +106,10 @@ func _show_dialog(index):
 		tween = null
 	tween = create_tween().bind_node(self)
 	tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
+
+
 #endregion
+
 
 #region 对话中处理点击行为
 func _unhandled_input(event: InputEvent) -> void:

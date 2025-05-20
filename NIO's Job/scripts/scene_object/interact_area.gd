@@ -1,11 +1,10 @@
 extends Area2D
 
-@export var type: InteractStats
+@export var interaction: InteractStats
 
 var target_group: String = "player"
 var player_is_in_interact_area: bool = false
 var is_in_interaction: bool = false
-var _interact_type: InteractStats.InteractType
 
 
 func _ready() -> void:
@@ -22,12 +21,12 @@ func _process(_delta: float) -> void:
 
 #region 处理互动状态
 func on_interaction_started(_placeholder = null):
-	print("开始了互动")
+	#print("开始了互动")
 	is_in_interaction = true
 
 
 func on_interaction_ended():
-	print("结束了互动")
+	#print("结束了互动")
 	await get_tree().create_timer(0.05).timeout
 	is_in_interaction = false
 
@@ -53,5 +52,7 @@ func _on_body_exited(body: Node2D) -> void:
 func _try_to_interact():
 	if player_is_in_interact_area:
 		if Input.is_action_just_pressed("interact"):
-			GlobalSignalBus.interaction_started.emit(_interact_type)
+			#print($".", "准备发送信号")
+			GlobalSignalBus.interaction_started.emit(interaction)
+			#print($".", " 信号已发送，携带数据为： ", str(interaction.interact_type), " ", str(interaction.text_path))
 #endregion

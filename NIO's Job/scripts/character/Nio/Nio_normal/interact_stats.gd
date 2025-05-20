@@ -3,26 +3,46 @@ class_name InteractStats
 extends Resource
 
 enum InteractType { 占位词, 浮动对话, 底部对话, 使用, 捡起 }
-enum FloatTalk { 占位词, 浮动块测试, 镜子测试 }
-enum ButtomTalk { 占位词, 固定块测试, 今晚思考 }
+enum FloatTalkType { 占位词, 浮动块测试, 镜子测试 }
+enum ButtomTalkType { 占位词, 底部测试, 今晚思考 }
 
-@export var type: InteractType = InteractType.占位词:
+@export var interact_type: InteractType = InteractType.占位词:
 	set(value):
-		type = value
+		interact_type = value
 		notify_property_list_changed()
 
-@export var float_talk_path: FloatTalk = FloatTalk.占位词:
+@export var float_talk: FloatTalkType = FloatTalkType.占位词:
 	set(value):
-		float_talk_path = value
+		float_talk = value
 		notify_property_list_changed()
+		_set_text_path()
 
-@export var bottom_talk_path: ButtomTalk = ButtomTalk.占位词:
+@export var buttom_talk: ButtomTalkType = ButtomTalkType.占位词:
 	set(value):
-		bottom_talk_path = value
+		buttom_talk = value
 		notify_property_list_changed()
+		_set_text_path()
+
+var text_path: String
+
+
+func _set_text_path():
+	match interact_type:
+		InteractType.占位词:
+			pass
+		InteractType.浮动对话:
+			text_path = FLOAT_TALK_PATH[float_talk]
+		InteractType.底部对话:
+			text_path = BUTTOM_TALK_PATH[buttom_talk]
+		InteractType.使用:
+			pass
+		InteractType.捡起:
+			pass
+
 
 # 头像路径
 const AVATAR_MAP = {
+	"no_avatar": "",
 	"Nio_normal_null": preload("res://assets/images/hd_pic/Nio_normal_hd_pic.png"),
 	"Nio_normal_embarrass": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_embarrass.png"),
 	"Nio_normal_lookdown": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_lookdown.png"),
@@ -33,20 +53,21 @@ const AVATAR_MAP = {
 
 # 浮动对话框路径
 const FLOAT_TALK_PATH = {
-	FloatTalk.占位词: "", 
-	FloatTalk.浮动块测试: "res://dialogs/float_dialogs/test_float_dialog.json", 
-	FloatTalk.镜子测试: "res://dialogs/float_dialogs/test_mirror_dialog.json"
+	FloatTalkType.占位词: "res://dialogs/placeholder.json",
+	FloatTalkType.浮动块测试: "res://dialogs/float_dialogs/test_float_dialog.json",
+	FloatTalkType.镜子测试: "res://dialogs/float_dialogs/test_mirror_dialog.json"
 }
 
 # 底部对话框路径
 const BUTTOM_TALK_PATH = {
-	ButtomTalk.占位词: "", 
-	ButtomTalk.固定块测试: "res://dialogs/bottom_dialogs/test_bottom_dialog.json", 
-	ButtomTalk.今晚思考: "res://dialogs/bottom_dialogs/test_think_dialog.json"
+	ButtomTalkType.占位词: "res://dialogs/placeholder.json",
+	ButtomTalkType.底部测试: "res://dialogs/bottom_dialogs/test_bottom_dialog.json",
+	ButtomTalkType.今晚思考: "res://dialogs/bottom_dialogs/test_think_dialog.json"
 }
 
+
 func _validate_property(property: Dictionary) -> void:
-	if property.name == "float_talk_path" and type != InteractType.浮动对话:
+	if property.name == "float_talk" and interact_type != InteractType.浮动对话:
 		property.usage = PROPERTY_USAGE_NO_EDITOR
-	elif property.name == "bottom_talk_path" and type != InteractType.底部对话:
+	elif property.name == "buttom_talk" and interact_type != InteractType.底部对话:
 		property.usage = PROPERTY_USAGE_NO_EDITOR
