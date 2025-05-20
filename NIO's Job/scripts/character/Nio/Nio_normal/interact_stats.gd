@@ -4,7 +4,7 @@ extends Resource
 
 enum InteractType { 占位词, 浮动对话, 底部对话, 使用, 捡起 }
 enum FloatTalkType { 占位词, 浮动块测试, 镜子测试 }
-enum ButtomTalkType { 占位词, 底部测试, 今晚思考 }
+enum ButtomTalkType { 占位词, 底部测试, 今晚思考, 聚餐邀请 }
 
 @export var interact_type: InteractType = InteractType.占位词:
 	set(value):
@@ -42,13 +42,14 @@ func _set_text_path():
 
 # 头像路径
 const AVATAR_MAP = {
-	"no_avatar": "",
+	"no_avatar": preload("res://assets/images/hd_pic/no_avatar.png"),
 	"Nio_normal_null": preload("res://assets/images/hd_pic/Nio_normal_hd_pic.png"),
 	"Nio_normal_embarrass": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_embarrass.png"),
 	"Nio_normal_lookdown": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_lookdown.png"),
-	"Nio_normal_sick": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_sick.png"),
+	"Nio_normal_sick": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_lookdown.png"),
 	"Nio_normal_sigh": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_sigh.png"),
-	"Nio_normal_wodden": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_wodden.png")
+	"Nio_normal_wodden": preload("res://assets/images/hd_pic/Nio_normal_hd_pic_wodden.png"),
+	"Alf_null": preload("res://assets/images/hd_pic/Alf_hd.png"),
 }
 
 # 浮动对话框路径
@@ -62,7 +63,8 @@ const FLOAT_TALK_PATH = {
 const BUTTOM_TALK_PATH = {
 	ButtomTalkType.占位词: "res://dialogs/placeholder.json",
 	ButtomTalkType.底部测试: "res://dialogs/bottom_dialogs/test_bottom_dialog.json",
-	ButtomTalkType.今晚思考: "res://dialogs/bottom_dialogs/test_think_dialog.json"
+	ButtomTalkType.今晚思考: "res://dialogs/bottom_dialogs/test_think_dialog.json",
+	ButtomTalkType.聚餐邀请: "res://dialogs/bottom_dialogs/invitated_to_dinner_party.json"
 }
 
 

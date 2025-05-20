@@ -1,15 +1,20 @@
-[gd_resource type="JSON" format=3 uid="uid://mh6hdlyg0m5v"]
-
-[resource]
-data = [{
-"dialogs": [{
-"text": "今天好累....."
-}, {
-"text": "想早点休息"
-}, {
-"text": "但是还不行...."
-}, {
-"text": "还需要练习！"
-}],
-"interaction_count": 1.0
-}, {}]
+[
+	{
+		"interaction_count":1,
+			"dialogs": [
+			{"text": "今天好累....."
+			}, 
+			{"text": "想早点休息"
+			}, 
+			{"text": "但是还不行...."
+			},
+			{"text": "还需要练习！"
+			}]
+	},
+	{
+		"interaction_count": 2,
+			"dialogs": [
+			{"text": "真的还需要吗......"
+			}]
+	},
+]

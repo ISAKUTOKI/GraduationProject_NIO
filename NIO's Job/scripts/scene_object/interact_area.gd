@@ -54,5 +54,8 @@ func _try_to_interact():
 		if Input.is_action_just_pressed("interact"):
 			#print($".", "准备发送信号")
 			GlobalSignalBus.interaction_started.emit(interaction)
-			#print($".", " 信号已发送，携带数据为： ", str(interaction.interact_type), " ", str(interaction.text_path))
+			#print($".", " 信号已发送，携带数据为： ", 
+			#str(interaction.interact_type), 
+			#" ", 
+			#str(interaction.text_path))
 #endregion

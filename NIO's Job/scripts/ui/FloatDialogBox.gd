@@ -105,7 +105,8 @@ func _show_dialog(index):
 		tween.kill()
 		tween = null
 	tween = create_tween().bind_node(self)
-	tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
+	tween.tween_property(text_content, "visible_ratio", 1.0, 
+	show_dialog_unit_interval * text_content.text.length())
 
 
 #endregion

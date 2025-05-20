@@ -86,7 +86,7 @@ func _show_dialog(index):
 # 设置头像————————————————————
 	var _dia_ava
 	if _dialog.has("avatar"):
-		_dia_ava = InteractStats.AVATAR_MAP.get(_dialog.avatar, null)
+		_dia_ava = _dialog.avatar
 		print("有头像，为： ", str(_dialog.avatar))
 	else:
 		_dia_ava = "Nio_normal_null"
@@ -102,7 +102,8 @@ func _show_dialog(index):
 		tween.kill()
 		tween = null
 	tween = create_tween().bind_node(self)
-	tween.tween_property(text_content, "visible_ratio", 1.0, show_dialog_unit_interval * text_content.text.length())
+	tween.tween_property(text_content, "visible_ratio", 1.0, 
+	show_dialog_unit_interval * text_content.text.length())
 
 
 #endregion
