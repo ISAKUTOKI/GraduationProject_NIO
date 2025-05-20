@@ -1,10 +1,11 @@
 extends Area2D
 
-@export var _interact_type: InteractStats.InteractType = InteractStats.InteractType.TALK
+@export var type: InteractStats
 
 var target_group: String = "player"
 var player_is_in_interact_area: bool = false
 var is_in_interaction: bool = false
+var _interact_type: InteractStats.InteractType
 
 
 func _ready() -> void:
@@ -29,6 +30,8 @@ func on_interaction_ended():
 	print("结束了互动")
 	await get_tree().create_timer(0.05).timeout
 	is_in_interaction = false
+
+
 #endregion
 
 
@@ -41,6 +44,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group(target_group):
 		player_is_in_interact_area = false
+
+
 #endregion
 
 

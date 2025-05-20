@@ -26,7 +26,9 @@ func _regenerate_all_numbers():
 # 紧凑排列算法————————————————————
 	for y in rows:
 		for x in cols:
-			var cell_pos = Vector2(start_pos.x + x * spacing.x, start_pos.y + y * spacing.y)
+			var cell_pos = Vector2(
+				start_pos.x + x * spacing.x, 
+				start_pos.y + y * spacing.y)
 # 边界检查————————————————————
 			if cell_pos.x + number_size.x / 2 > spawn_rect.end.x:
 				continue

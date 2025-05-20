@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://bpvetc7go15q5"]
 
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_score.gd" id="1_jfhdv"]
-[ext_resource type="Script" path="res://scripts/level/data_collection/data_animations.gd" id="2_db83n"]
+[ext_resource type="Script" path="res://scripts/level/data_collection/data_screen_animations.gd" id="2_db83n"]
 [ext_resource type="Script" path="res://scripts/level/data_collection/data_generate_cell_numbers.gd" id="3_1ada8"]
 [ext_resource type="PackedScene" uid="uid://bqvh5hrtem2go" path="res://scenes/level/data_collection/data_cell_number.tscn" id="4_xcuux"]
 [ext_resource type="PackedScene" uid="uid://ciljaucdsdwlu" path="res://scenes/scene_object/main_camera.tscn" id="5_4jpsw"]

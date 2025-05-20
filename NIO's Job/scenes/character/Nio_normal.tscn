@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://byo2xx0o7wna2"]
 
-[ext_resource type="Script" path="res://scripts/character/Nio/Nio_normal/NioBehaviour.gd" id="1_cccuq"]
-[ext_resource type="Script" path="res://scripts/character/Nio/Nio_normal/NioInteract.gd" id="3_x42f3"]
+[ext_resource type="Script" path="res://scripts/character/Nio/Nio_normal/Nio_behaviour.gd" id="1_cccuq"]
+[ext_resource type="Script" path="res://scripts/character/Nio/Nio_normal/Nio_interact.gd" id="3_x42f3"]
 [ext_resource type="Texture2D" uid="uid://dippmw600p5gu" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_b.png" id="4_wcme6"]
 [ext_resource type="Texture2D" uid="uid://c3vwpoe3g8c51" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_b_walk2.png" id="5_pueth"]
 [ext_resource type="Texture2D" uid="uid://dbl3kbux8nocq" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_b_walk.png" id="6_w4n2g"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dbsif57awe3n" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_l_walk2.png" id="11_tgmn0"]
 [ext_resource type="Texture2D" uid="uid://4npqj3n3fkw0" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_l_walk.png" id="12_yoa1d"]
 [ext_resource type="Texture2D" uid="uid://ca0c6d4pde4el" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_r.png" id="13_m8rkw"]
-[ext_resource type="Script" path="res://scripts/character/Nio/Nio_normal/NioMove.gd" id="14_kx7io"]
+[ext_resource type="Script" path="res://scripts/character/Nio/Nio_normal/Nio_move.gd" id="14_kx7io"]
 [ext_resource type="Texture2D" uid="uid://0skr3y7k17tn" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_r_walk2.png" id="14_y11w8"]
 [ext_resource type="Texture2D" uid="uid://cb7dn3ox1yr11" path="res://assets/images/sprites/Nio/normal/idle_move/Nio_r_walk.png" id="15_h0lre"]
 
