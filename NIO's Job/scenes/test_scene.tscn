@@ -10,7 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_28ye8"]
 script = ExtResource("4_0vlfi")
-interact_type = 1
+interact_type = 2
 float_talk = 2
 buttom_talk = 3
 
@@ -21,9 +21,11 @@ size = Vector2(53, 20)
 
 [node name="Nio" parent="." instance=ExtResource("4_ve3n2")]
 position = Vector2(180, 87)
-scale = Vector2(1.88, 1.88)
+scale = Vector2(1.5, 1.5)
 
 [node name="MainCamera" parent="." instance=ExtResource("1_dyg07")]
+zoom = Vector2(10, 10)
+camera_move_speed = 4.0
 
 [node name="FloatDialogBox" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("7_4e8sc")]
 target_node = NodePath("../InteractArea/CollisionShape2D")
@@ -32,7 +34,6 @@ offset = Vector2(0, -50)
 [node name="BottomDialogBox" parent="." instance=ExtResource("7_3xrrc")]
 
 [node name="room" type="Node2D" parent="."]
-z_index = -1
 metadata/_edit_lock_ = true
 
 [node name="floor" type="TileMapLayer" parent="room"]
@@ -48,5 +49,5 @@ tile_set = ExtResource("9_ne7ow")
 interaction = SubResource("Resource_28ye8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
-position = Vector2(240, 73)
+position = Vector2(174, 121)
 shape = SubResource("RectangleShape2D_yhb6h")
