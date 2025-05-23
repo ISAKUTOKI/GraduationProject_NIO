@@ -31,14 +31,7 @@ func _initialize(_type: BurgerOrderStats.OrderType, _target_position: Vector2, _
 	target_z_index = _target_z_index
 	z_index = _target_z_index
 
-	position = Vector2(350, 14)
-	var tween = create_tween()
-	print("当前位置为",str(self.position),",目标位置为",str(_target_position),",目标z索引为",str(_target_z_index))
-	tween.tween_property(self, "position", _target_position, 0.1)
-	await tween.finished
-	print("移动后位置为",str(self.position),",z索引为",str(_target_z_index))
-	print("----------")
-	position = _target_position
+
 	
 	#print("新创建订单的z_index为： ", z_index)
 	GlobalSignalBus.burger_order_is_created.disconnect(_initialize)

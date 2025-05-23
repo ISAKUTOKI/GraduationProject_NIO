@@ -83,7 +83,7 @@ func _hide_final_burger() -> void:
 
 func _calculate_start_position(from_pos: Vector2, to_pos: Vector2) -> void:
 	bang_start_pos = from_pos
-	bang_end_pos = Vector2(to_pos.x, to_pos.y)  # y定为14
+	bang_end_pos = Vector2(to_pos.x, to_pos.y+10)  # y定为14
 	push_start_pos = Vector2(bang_end_pos.x + 100, bang_end_pos.y)  # 往右5像素
 	push_end_pos = Vector2(bang_end_pos.x - 300, push_start_pos.y)
 

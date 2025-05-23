@@ -33,7 +33,7 @@ func _on_burger_is_ready_for_start_stage() -> void:
 
 
 func _on_burger_is_ok_to_clear() -> void:
-	_clear_all_burger_parts()
+	_clear_all_burger_parts_on_table()
 
 
 func _on_burger_part_is_picked(_picked_type: BurgerPartStats) -> void:
@@ -89,12 +89,12 @@ func _create_shadow() -> void:
 		tween.tween_property(shadow, "modulate", Color(1, 1, 1, 1), 0.1)
 
 
-func _clear_all_burger_parts() -> void:
+func _clear_all_burger_parts_on_table() -> void:
 	for i in range(burger_part_list.size() - 1, -1, -1):
 		burger_part_list[i].queue_free()
 	burger_part_list.clear()
 	packed_burger.clear()
 	shadow.modulate = Color(1, 1, 1, 0)
 	last_packed_part_position = bottom_position
-	print("清除了桌面的汉堡")
+	#print("清除了桌面的汉堡")
 	print("————————————————————")
