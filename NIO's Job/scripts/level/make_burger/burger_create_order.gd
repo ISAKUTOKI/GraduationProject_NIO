@@ -1,3 +1,4 @@
+class_name BurgerCreateOrder
 extends Node
 
 @onready var button: Button = $Button
@@ -46,13 +47,15 @@ func create_order(_is_random: bool = true, _designated_type_number: int = -1) ->
 	if _is_random:
 		var random_order_type_number: int = randi() % BurgerOrderStats.OrderType.size()
 		order_type = BurgerOrderStats.OrderType.values()[random_order_type_number]
-		GlobalSignalBus.burger_order_is_created.emit(order_type, create_target_position, create_target_z_index)
+		GlobalSignalBus.burger_order_is_created.emit(order_type, create_target_position, 
+		create_target_z_index)
 	else:
 		if _designated_type_number == -1:
 			push_error("此订单为指定类型订单，但是没有赋值")
 		else:
 			order_type = BurgerOrderStats.OrderType.values()[_designated_type_number]
-			GlobalSignalBus.burger_order_is_created.emit(_designated_type_number, create_target_position, create_target_z_index)
+			GlobalSignalBus.burger_order_is_created.emit(_designated_type_number, 
+			create_target_position, create_target_z_index)
 
 	_rank_burger_order()
 	#print("新创建的订单种类为：", BurgerOrderStats.OrderName[order_type])

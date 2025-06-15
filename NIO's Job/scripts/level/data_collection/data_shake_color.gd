@@ -58,9 +58,8 @@ func _shake_number(_delta) -> void:
 		shake_phase += _delta * shake_speed
 # 进行震动（控制sin和cos的参为震动幅度赋值）————————————————————
 		var shake_pos = Vector2(
-			sin(shake_phase * 1.2) * max_position_shake.x, 
-			cos(shake_phase * 0.8) * max_position_shake.y
-			) * strength
+		sin(shake_phase * 1.2) * max_position_shake.x, 
+		cos(shake_phase * 0.8) * max_position_shake.y) * strength
 		var shake_rot = sin(shake_phase * 1.5) * max_rotation_shake * strength
 		#print("赋值前的位置为： " + str(target.position))
 		#print("初始位置值为： " + str(original_position))
@@ -72,3 +71,23 @@ func _shake_number(_delta) -> void:
 # 回到初始状态————————————————————
 		target.position = original_position
 		target.rotation_degrees = original_rotation
+
+
+#@export var shake_strength: float = 10
+#@export var rand: float = randf_range(2.0, 6.0)
+#@export var rand_v: int = randi_range(-1, 1)
+#var can_rotate: bool = true
+#
+#
+#func _shake_number_test() -> void:
+	#original_rotation = target.rotation
+	#var tween = create_tween()
+	#if can_rotate:
+		#can_rotate = false
+		#tween.tween_property(target, "rotation", shake_strength + rand * rand_v, 0.02)
+		#await tween.finished
+		#tween.tween_property(target, "rotation", -shake_strength + rand * rand_v, 0.02)
+		#await tween.finished
+	#else:
+		#return
+	#can_rotate = true

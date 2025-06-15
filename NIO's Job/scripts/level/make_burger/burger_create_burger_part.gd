@@ -1,3 +1,4 @@
+class_name BurgerCreateBurgerParts
 extends Node
 
 @export var burger_part: PackedScene
