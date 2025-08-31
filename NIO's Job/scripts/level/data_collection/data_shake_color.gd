@@ -61,12 +61,8 @@ func _shake_number(_delta) -> void:
 		sin(shake_phase * 1.2) * max_position_shake.x, 
 		cos(shake_phase * 0.8) * max_position_shake.y) * strength
 		var shake_rot = sin(shake_phase * 1.5) * max_rotation_shake * strength
-		#print("赋值前的位置为： " + str(target.position))
-		#print("初始位置值为： " + str(original_position))
 		target.position = original_position + shake_pos
 		target.rotation_degrees = original_rotation + shake_rot
-		#print("赋值后的位置为： " + str(target.position))
-		#print("断点占位")
 	else:
 # 回到初始状态————————————————————
 		target.position = original_position
